@@ -8,24 +8,44 @@ function App() {
     return (
         <>
         <BrowserRouter>
-        <div className="app">
-       <nav className="navbar">
-      <Link to="/" className="nav-logo">
-        <img src={Logo} alt="Logo" />
-      </Link>
-        <div className="nav-links">
-        <Link to="/adoptar">Adoptar</Link>
-        <Link to="/contacto">Contacto</Link>
-      </div>
-      </nav>
+<div className="app">
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="*" element={<NotFount />} />
-        </Routes>
-      </main>
+  {/* NAVBAR */}
+  <nav className="navbar">
+    <Link to="/" className="nav-logo">
+      <img src={Logo} alt="Logo" />
+    </Link>
+    <div className="nav-links">
+      <Link to="/animales">Adoptar</Link>
+      <Link to="/articulos">Merchandising</Link>
+      <Link to="/colabora">Colaborar</Link>
+      <Link to="/anuncios">Anuncios</Link>
     </div>
+  </nav>
+
+  {/* CONTENIDO PRINCIPAL */}
+  <main>
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="*" element={<NotFount />} />
+    </Routes>
+  </main>
+
+  {/* FOOTER */}
+  <footer className="footer">
+    <div className="footer-content">
+      <p>© 2026 Adopta con Amor</p>
+
+      <div className="footer-links">
+        <a href="/contacto">Contacto</a>
+        <a href="/privacidad">Privacidad</a>
+        <a href="/sobre-nosotros">Sobre nosotros</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
     </BrowserRouter>
         </>
     )

@@ -1,5 +1,6 @@
 import PortadaImg from '/src/assets/PortadaImg.png';
 import './Index.css';
+import { Link } from 'react-router-dom';
 
 function Index(){
 
@@ -12,7 +13,9 @@ function Index(){
       <div className="hero-content">
         <h1>Adopta, no compres</h1>
         <p>Dales una segunda oportunidad</p>
-        <button className="hero-btn">Ver animales</button>
+        <Link to={`/animales`}>
+        <button className="hero-btn" >Ver animales</button>
+        </Link>
       </div>
     </header>
     )
