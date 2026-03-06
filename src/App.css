@@ -1,0 +1,42 @@
+.navbar {
+  width: 100%;
+  padding: 12px 30px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.nav-logo img {
+  height: 55px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.nav-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Enlaces */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff914d;
+  transform: translateY(-2px);
+}
+

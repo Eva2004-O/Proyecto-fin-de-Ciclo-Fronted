@@ -1,0 +1,60 @@
+.hero {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+/* Capa oscura suave para que el texto destaque */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 2;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero-btn {
+  padding: 12px 28px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: #ff914d;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+.hero-btn:hover {
+  background: #ff7a26;
+  transform: translateY(-3px);
+}
