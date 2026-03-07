@@ -3,6 +3,9 @@ import "./App.css";
 import Index from "./Components/Index";
 import NotFount from "./Components/NotFound";
 import Logo from './assets/Logo.png';
+import Sobre_nosotros from "./Components/Sobre_nosotros";
+import Politica_privacidad from "./Components/Politica_privacidad";
+import Contacto from "./Components/Contacto";
 
 function App() {
     return (
@@ -20,6 +23,7 @@ function App() {
       <Link to="/articulos">Merchandising</Link>
       <Link to="/colabora">Colaborar</Link>
       <Link to="/anuncios">Anuncios</Link>
+      <Link to="/administracion">Administración</Link>
     </div>
   </nav>
 
@@ -27,7 +31,11 @@ function App() {
   <main>
     <Routes>
       <Route path="/" element={<Index />} />
+      <Route path="/sobre-nosotros" element={<Sobre_nosotros></Sobre_nosotros>}></Route>
+      <Route path="/privacidad" element={<Politica_privacidad></Politica_privacidad>}></Route>
+      <Route path="/contacto" element={<Contacto></Contacto>}></Route>
       <Route path="*" element={<NotFount />} />
+
     </Routes>
   </main>
 
