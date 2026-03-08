@@ -3,7 +3,14 @@ import Card_Animal from "./Card_Animal";
 import perroFoto1 from '/src/assets/perro1.jpg';
 import gatoFoto1 from '/src/assets/gato1.jpg';
 import perroFoto2 from '/src/assets/perro2.jpg';
+import perroFoto3 from '/src/assets/perro3.jpg';
+import perroFoto4 from '/src/assets/perro4.png';
+import perroFoto5 from '/src/assets/perro5.png';
 import gatoFoto2 from '/src/assets/gato2.jpg';
+import gatoFoto3 from '/src/assets/gato3.jpg';
+import gatoFoto4 from '/src/assets/gato4.jpg';
+import gatoFoto5 from '/src/assets/gato5.jpg';
+
 import './List_Animal.css';
 
 export const listAnimales = [{id: "1", imagen:perroFoto1, nombre:"Troska", edad:"8", sexo:"HEMBRA", estado:"Disponible", peso:20, tamaño:"Mediano",
@@ -16,8 +23,27 @@ export const listAnimales = [{id: "1", imagen:perroFoto1, nombre:"Troska", edad:
         historia:"Y qué guapa es Valentina! 😻Esta gatita lleva con nosotros ya un tiempo, y ha llegado el momento de que encuentre una familia. Como una de las veteranas, podemos decir que es una gatita buenísima que solo pide un hogar donde recibir amor. ¿Se lo darás tú?"
     },
     {id: "4", imagen:perroFoto2, nombre:"Avellana", edad:"10", sexo:"HEMBRA", estado:"Disponible", peso:18, tamaño:"mediano", 
-        historia:"¡UNA REINA BUSCA SU TRONO! (Y UN LUGAR PARA SUS JUGUETES) ¡Hola a todos! Soy AVELLANA y estoy buscando a mi familia definitiva. Dicen por ahí que el carnet de identidad marca 10 años, pero ¡no os lo creáis! Mi energía y mis ganas de vivir dicen que tengo apenas 6 o 7 añitos. Estoy en la flor de la vida, ¡solo que un poquito mejor alimentada! Peso unos 18/20 kg de puro amor. Sí, estoy un poquito gordita, ¡pero eso solo significa que hay más superficie para acariciar! Sé perfectamente lo que es vivir en una casa. Me encanta la comodidad, las rutinas y, sobre todo, sentirme parte de una familia Los peques me vuelven loca. Soy paciente, dulce y extremadamente cariñosa con ellos. ¡Soy la niñera perfecta! Mi hobby favorito es coleccionar mis tesoros y llevarlos todos a mi camita. ¡Me encanta tener mis cosas organizadas! Busco un hogar donde me quieran tal y como soy. Alguien que no se fije en un número, sino en mi mirada llena de gratitud. Soy una perrita encantadora, sociable con todo el mundo y muy equilibrada. Solo necesito un sofá (o una camita amplia para mis juguetes) y mucho cariño para dar. Si buscas una compañera fiel que ya sabe lo que es el respeto y el amor de un hogar, ¡esa soy yo!"}
-]
+        historia:"¡UNA REINA BUSCA SU TRONO! (Y UN LUGAR PARA SUS JUGUETES) ¡Hola a todos! Soy AVELLANA y estoy buscando a mi familia definitiva. Dicen por ahí que el carnet de identidad marca 10 años, pero ¡no os lo creáis! Mi energía y mis ganas de vivir dicen que tengo apenas 6 o 7 añitos. Estoy en la flor de la vida, ¡solo que un poquito mejor alimentada! Peso unos 18/20 kg de puro amor. Sí, estoy un poquito gordita, ¡pero eso solo significa que hay más superficie para acariciar! Sé perfectamente lo que es vivir en una casa. Me encanta la comodidad, las rutinas y, sobre todo, sentirme parte de una familia Los peques me vuelven loca. Soy paciente, dulce y extremadamente cariñosa con ellos. ¡Soy la niñera perfecta! Mi hobby favorito es coleccionar mis tesoros y llevarlos todos a mi camita. ¡Me encanta tener mis cosas organizadas! Busco un hogar donde me quieran tal y como soy. Alguien que no se fije en un número, sino en mi mirada llena de gratitud. Soy una perrita encantadora, sociable con todo el mundo y muy equilibrada. Solo necesito un sofá (o una camita amplia para mis juguetes) y mucho cariño para dar. Si buscas una compañera fiel que ya sabe lo que es el respeto y el amor de un hogar, ¡esa soy yo!"
+    },
+    {id: "5", imagen:perroFoto3, nombre:"Alcazar", edad:"2", sexo:"MACHO", estado:"Disponible", peso:23, tamaño:"mediano", 
+        historia:"Este galguete nos ha mostrado desde el primer día que tiene muy buen carácter. 🌟Se muestra siempre alegre, juguetón, divertido y cariñoso, y es que aún no ha dejado de ser cachorro ya que tiene solo año y medio. 🐶Convive con el resto de perros del refugio sin problema por lo que puede ser adoptado por familias con más perros en el hogar." 
+    },
+    {id: "6", imagen:gatoFoto3, nombre:"Leo", edad:"3", sexo:"MACHO", estado:"Disponible", peso:3, tamaño:"mediano", 
+        historia:"Lleva casi dos años esperando un hogar!!!! Por favor!!!!!"
+    },
+    {id: "7", imagen:gatoFoto4, nombre:"Prince", edad:"3", sexo:"MACHO", estado:"Disponible", peso:3, tamaño:"mediano", 
+        historia:"Le rescatamos junto a su mamá y sus cuatro hermanos. Es el único de la familia que aún no tiene su propio hogar, a pesar de ser un encanto! Es amigo de todos los gatos y de todos los perros, y le encanta jugar."
+    },
+    {id: "8", imagen:perroFoto4, nombre:"Toby", edad:"12", sexo:"MACHO", estado:"Disponible", peso:5, tamaño:"pequeño", 
+        historia:"Toby es un perrito especial que está esperando la oportunidad de conocer por fin lo que es una familia de verdad. Es muy bueno y tremendamente cariñoso con las personas. Le encanta recibir mimos, caricias y compartir ratitos tranquilos. Se lleva genial con otros perros, sin importar su tamaño. Tiene un carácter noble y sociable, por lo que sería un compañero perfecto tanto para familias con más peluditos como para quienes quieran sumar a su primer compañero de cuatro patas. Toby llegó en muy mal estado y todo apunta a que ha sufrido en el pasado. Por eso, si alguien se acerca de forma brusca o demasiado directa, a veces se asusta y puede reaccionar por miedo. Pero cuando te acercas con suavidad y respeto, se muestra tal y como es: un perro dulce, manejable y con muchísimas ganas de querer y ser querido. Toby solo necesita un hogar paciente, con cariño y comprensión, donde pueda sentirse seguro y aprender que ya no tiene nada que temer. A cambio, dará todo su amor y gratitud. ¿Le das la oportunidad que merece?"
+    },
+    {id: "9", imagen:gatoFoto5, nombre:"Zarzamo", edad:"3", sexo:"MACHO", estado:"Disponible", peso:5, tamaño:"pequeño", 
+        historia: "A Zarzamora la rescatamos después de haber sido abandonada en una colonia de gatos ,junto a su hermana FRESITA."   
+    },
+    {id: "10", imagen:perroFoto5, nombre:"Mikado", edad:"3", sexo:"MACHO", estado:"Disponible", peso:25, tamaño:"grande", 
+        historia:"Mikado es un perrete joven con un corazón enorme y una nobleza que conquista desde el primer momento. Es muy cariñoso con las personas, siempre agradecido por cada caricia y gesto de cariño. Aunque al principio puede mostrarse un poquito tímido con otros perros, pronto se siente seguro y demuestra lo sociable que es: sabe convivir y disfruta de la compañía. Pasear con él es una delicia: camina muy bien con la correa, atento y tranquilo. A su corta edad aún tiene toda la vida por delante, y estamos seguros de que quien le dé una oportunidad se llevará un compañero fiel, dulce y sensible. Mikado merece un hogar donde lo quieran y lo cuiden como él sabe querer: con toda el alma. Si buscas un amigo leal y noble, ¡ven a conocerlo!"
+    }
+    ]
 
 function List_Animals() {
     const [animales, setAnimales] = useState(listAnimales)
