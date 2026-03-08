@@ -6,6 +6,8 @@ import Logo from './assets/Logo.png';
 import Sobre_nosotros from "./Components/Sobre_nosotros";
 import Politica_privacidad from "./Components/Politica_privacidad";
 import Contacto from "./Components/Contacto";
+import List_Animals, { listAnimales } from "./Components/List_Animal";
+import Card_Animal_Details from "./Components/Card_Animal_Details";
 
 function App() {
     return (
@@ -34,8 +36,10 @@ function App() {
       <Route path="/sobre-nosotros" element={<Sobre_nosotros></Sobre_nosotros>}></Route>
       <Route path="/privacidad" element={<Politica_privacidad></Politica_privacidad>}></Route>
       <Route path="/contacto" element={<Contacto></Contacto>}></Route>
+      <Route path="/animales" element={<List_Animals></List_Animals>}></Route>
+      <Route path="/animales/:id" element={<Card_Animal_Details animales={listAnimales}></Card_Animal_Details>}></Route>
       <Route path="*" element={<NotFount />} />
-
+      
     </Routes>
   </main>
 

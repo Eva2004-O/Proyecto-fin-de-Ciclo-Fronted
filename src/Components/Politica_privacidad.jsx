@@ -3,7 +3,7 @@ import './Politica_privacidad.css'
 function Politica_privacidad() {
 
     return (
-        <div className="contenedor_principal">
+        <div className="contenedor-principal">
             <h1>Política De Privacidad</h1>
             <p>En adopta con amor nos tomamos muy enserio la protección de tus datos personales</p>
             <p>Esta política explica que información recopilamos, como la utilizamos y cuales son tus derechos como usuario</p>

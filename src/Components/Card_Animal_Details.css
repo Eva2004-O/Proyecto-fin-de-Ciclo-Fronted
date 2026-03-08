@@ -1,0 +1,136 @@
+/* CONTENEDOR GENERAL */
+.detalle-container {
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* TARJETA PRINCIPAL */
+.detalle-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  padding: 25px;
+}
+
+/* IMAGEN */
+.detalle-img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* INFO */
+.detalle-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.detalle-info h1 {
+  font-size: 2.4rem;
+  color: #ff7a26;
+}
+
+/* ESTADO */
+.detalle-estado {
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-weight: bold;
+  width: fit-content;
+  font-size: 1rem;
+  color: white;
+}
+
+.en-adopcion {
+  background: #ff914d;
+}
+
+.adoptado {
+  background: #4caf50;
+}
+
+/* DATOS */
+.detalle-datos p {
+  font-size: 1.2rem;
+  margin: 6px 0;
+}
+
+.detalle-datos strong {
+  color: #ff7a26;
+}
+
+/* HISTORIA */
+.detalle-historia h2 {
+  font-size: 1.6rem;
+  color: #ff7a26;
+  margin-bottom: 6px;
+}
+
+.detalle-historia p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* BOTONES */
+.detalle-botones {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.btn-volver {
+  background: white;
+  border: 2px solid #ff914d;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-volver:hover {
+  background: #ffe1cc;
+}
+
+.btn-adoptar {
+  background: #ff914d;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-adoptar:hover {
+  background: #ff7a26;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .detalle-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detalle-img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .detalle-info {
+    width: 100%;
+  }
+}
