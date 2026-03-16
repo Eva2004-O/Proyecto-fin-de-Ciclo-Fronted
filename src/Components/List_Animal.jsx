@@ -12,45 +12,79 @@ import gatoFoto4 from '/src/assets/gato4.jpg';
 import gatoFoto5 from '/src/assets/gato5.jpg';
 
 import './List_Animal.css';
+import Formulario_Filtrar_Animales from "./Formulario_filtrar_Animales";
 
-export const listAnimales = [{id: "1", imagen:perroFoto1, nombre:"Troska", edad:"8", sexo:"HEMBRA", estado:"Disponible", peso:20, tamaño:"Mediano",
+export const listAnimales = [
+    {id: "1", especie:"Perro", imagen:perroFoto1, nombre:"Troska", edad:"8", sexo:"HEMBRA", estado:"Disponible", peso:20, tamaño:"Mediano",
     historia:"Troska estuvo toda su vida atada, y llegó con una inseguridad hacia las personas, que tras trabajo y dedicación, ha desaparecido por completo. Actualmente está completamente rehabilitada, es súper cariñosa, le encanta tomar el sol y los paseos. Le encanta ir a saludar a todo el mundo y es sociable con otros perros. Necesita licencia PPP. Ayúdanos a encontrarle el mejor hogar!"
  },
-    {id: "2", imagen:gatoFoto1, nombre:"British", edad:"3", sexo:"HEMBRA", estado:"Disponible", peso:3, tamaño:"pequeño", 
+    {id: "2",especie:"Gato", imagen:gatoFoto1, nombre:"British", edad:"3", sexo:"HEMBRA", estado:"Disponible", peso:3, tamaño:"pequeño", 
         historia:"Gatita rescatada de el parking de El Corte Inglés donde se había refugiado de la lluvia. Amante del pavito, de dormir a los pies de la cama de su mama de acogida, ronroneadora y no duda en reclamar una sesión de mimos extra cuando a ella le apetece. De pelaje suave y esponjoso y grandes ojos verdes, se ha adaptado bien a la convivencia en una casa de acogida con humanos y otros gatos."
     },
-    {id: "3", imagen:gatoFoto2, nombre:"Valentina", edad:"6", sexo:"HEMBRA", estado:"Disponible", peso:3, tamaño:"pequeño",
+    {id: "3",especie:"Gato", imagen:gatoFoto2, nombre:"Valentina", edad:"6", sexo:"HEMBRA", estado:"Disponible", peso:3, tamaño:"pequeño",
         historia:"Y qué guapa es Valentina! 😻Esta gatita lleva con nosotros ya un tiempo, y ha llegado el momento de que encuentre una familia. Como una de las veteranas, podemos decir que es una gatita buenísima que solo pide un hogar donde recibir amor. ¿Se lo darás tú?"
     },
-    {id: "4", imagen:perroFoto2, nombre:"Avellana", edad:"10", sexo:"HEMBRA", estado:"Disponible", peso:18, tamaño:"mediano", 
+    {id: "4",especie:"Perro", imagen:perroFoto2, nombre:"Avellana", edad:"10", sexo:"HEMBRA", estado:"Disponible", peso:18, tamaño:"mediano", 
         historia:"¡UNA REINA BUSCA SU TRONO! (Y UN LUGAR PARA SUS JUGUETES) ¡Hola a todos! Soy AVELLANA y estoy buscando a mi familia definitiva. Dicen por ahí que el carnet de identidad marca 10 años, pero ¡no os lo creáis! Mi energía y mis ganas de vivir dicen que tengo apenas 6 o 7 añitos. Estoy en la flor de la vida, ¡solo que un poquito mejor alimentada! Peso unos 18/20 kg de puro amor. Sí, estoy un poquito gordita, ¡pero eso solo significa que hay más superficie para acariciar! Sé perfectamente lo que es vivir en una casa. Me encanta la comodidad, las rutinas y, sobre todo, sentirme parte de una familia Los peques me vuelven loca. Soy paciente, dulce y extremadamente cariñosa con ellos. ¡Soy la niñera perfecta! Mi hobby favorito es coleccionar mis tesoros y llevarlos todos a mi camita. ¡Me encanta tener mis cosas organizadas! Busco un hogar donde me quieran tal y como soy. Alguien que no se fije en un número, sino en mi mirada llena de gratitud. Soy una perrita encantadora, sociable con todo el mundo y muy equilibrada. Solo necesito un sofá (o una camita amplia para mis juguetes) y mucho cariño para dar. Si buscas una compañera fiel que ya sabe lo que es el respeto y el amor de un hogar, ¡esa soy yo!"
     },
-    {id: "5", imagen:perroFoto3, nombre:"Alcazar", edad:"2", sexo:"MACHO", estado:"Disponible", peso:23, tamaño:"mediano", 
+    {id: "5",especie:"Perro", imagen:perroFoto3, nombre:"Alcazar", edad:"2", sexo:"MACHO", estado:"Disponible", peso:23, tamaño:"mediano", 
         historia:"Este galguete nos ha mostrado desde el primer día que tiene muy buen carácter. 🌟Se muestra siempre alegre, juguetón, divertido y cariñoso, y es que aún no ha dejado de ser cachorro ya que tiene solo año y medio. 🐶Convive con el resto de perros del refugio sin problema por lo que puede ser adoptado por familias con más perros en el hogar." 
     },
-    {id: "6", imagen:gatoFoto3, nombre:"Leo", edad:"3", sexo:"MACHO", estado:"Disponible", peso:3, tamaño:"mediano", 
+    {id: "6",especie:"Gato", imagen:gatoFoto3, nombre:"Leo", edad:"3", sexo:"MACHO", estado:"Disponible", peso:3, tamaño:"mediano", 
         historia:"Lleva casi dos años esperando un hogar!!!! Por favor!!!!!"
     },
-    {id: "7", imagen:gatoFoto4, nombre:"Prince", edad:"3", sexo:"MACHO", estado:"Disponible", peso:3, tamaño:"mediano", 
+    {id: "7",especie:"Gato", imagen:gatoFoto4, nombre:"Prince", edad:"3", sexo:"MACHO", estado:"Disponible", peso:3, tamaño:"mediano", 
         historia:"Le rescatamos junto a su mamá y sus cuatro hermanos. Es el único de la familia que aún no tiene su propio hogar, a pesar de ser un encanto! Es amigo de todos los gatos y de todos los perros, y le encanta jugar."
     },
-    {id: "8", imagen:perroFoto4, nombre:"Toby", edad:"12", sexo:"MACHO", estado:"Disponible", peso:5, tamaño:"pequeño", 
+    {id: "8",especie:"Perro", imagen:perroFoto4, nombre:"Toby", edad:"12", sexo:"MACHO", estado:"Disponible", peso:5, tamaño:"pequeño", 
         historia:"Toby es un perrito especial que está esperando la oportunidad de conocer por fin lo que es una familia de verdad. Es muy bueno y tremendamente cariñoso con las personas. Le encanta recibir mimos, caricias y compartir ratitos tranquilos. Se lleva genial con otros perros, sin importar su tamaño. Tiene un carácter noble y sociable, por lo que sería un compañero perfecto tanto para familias con más peluditos como para quienes quieran sumar a su primer compañero de cuatro patas. Toby llegó en muy mal estado y todo apunta a que ha sufrido en el pasado. Por eso, si alguien se acerca de forma brusca o demasiado directa, a veces se asusta y puede reaccionar por miedo. Pero cuando te acercas con suavidad y respeto, se muestra tal y como es: un perro dulce, manejable y con muchísimas ganas de querer y ser querido. Toby solo necesita un hogar paciente, con cariño y comprensión, donde pueda sentirse seguro y aprender que ya no tiene nada que temer. A cambio, dará todo su amor y gratitud. ¿Le das la oportunidad que merece?"
     },
-    {id: "9", imagen:gatoFoto5, nombre:"Zarzamo", edad:"3", sexo:"MACHO", estado:"Disponible", peso:5, tamaño:"pequeño", 
+    {id: "9",especie:"Gato", imagen:gatoFoto5, nombre:"Zarzamo", edad:"3", sexo:"MACHO", estado:"Disponible", peso:5, tamaño:"pequeño", 
         historia: "A Zarzamora la rescatamos después de haber sido abandonada en una colonia de gatos ,junto a su hermana FRESITA."   
     },
-    {id: "10", imagen:perroFoto5, nombre:"Mikado", edad:"3", sexo:"MACHO", estado:"Disponible", peso:25, tamaño:"grande", 
+    {id: "10",especie:"Perro", imagen:perroFoto5, nombre:"Mikado", edad:"3", sexo:"MACHO", estado:"Disponible", peso:25, tamaño:"grande", 
         historia:"Mikado es un perrete joven con un corazón enorme y una nobleza que conquista desde el primer momento. Es muy cariñoso con las personas, siempre agradecido por cada caricia y gesto de cariño. Aunque al principio puede mostrarse un poquito tímido con otros perros, pronto se siente seguro y demuestra lo sociable que es: sabe convivir y disfruta de la compañía. Pasear con él es una delicia: camina muy bien con la correa, atento y tranquilo. A su corta edad aún tiene toda la vida por delante, y estamos seguros de que quien le dé una oportunidad se llevará un compañero fiel, dulce y sensible. Mikado merece un hogar donde lo quieran y lo cuiden como él sabe querer: con toda el alma. Si buscas un amigo leal y noble, ¡ven a conocerlo!"
     }
     ]
 
 function List_Animals() {
     const [animales, setAnimales] = useState(listAnimales)
+    const [filtros, setFiltros] =useState ({
+        nombre: "",
+        edad: "",
+        sexo: "",
+        tamaño: "",
+        estado: ""
+    })
+
+    const handleFilterChange = (newFilters) => {
+        setFiltros(newFilters)
+    }
+
+    const categoriaEdad = (edad) => {
+    const n = Number(edad);
+    if (n <= 1) return "CACHORRO";
+    if (n > 1 && n <= 9) return "ADULTO";
+    return "SENIOR";
+};
+
+    const animalesFiltrados = animales.filter((animal) => {
+        return (
+            (filtros.nombre === "" || animal.nombre.toLowerCase().includes(filtros.nombre.toLowerCase())) &&
+            (filtros.edad === "" || categoriaEdad(animal.edad) === filtros.edad) &&
+            (filtros.sexo === "" || animal.sexo === filtros.sexo) &&
+            (filtros.tamaño === "" || animal.tamaño === filtros.tamaño) &&
+            (filtros.estado === "" || animal.estado === filtros.estado)
+        );
+    })
+
+
 
     return(
+        <div className="contenedor-principal">
+            <Formulario_Filtrar_Animales onFilterChange={handleFilterChange}></Formulario_Filtrar_Animales>
         <div  className="contenedor-tarjetas">
-         {animales.map((animal) => (
+         {animalesFiltrados.map((animal) => (
           <Card_Animal key={animal.id} 
           id={animal.id}
           imagen={animal.imagen} 
@@ -60,6 +94,7 @@ function List_Animals() {
           estado={animal.estado}>
           </Card_Animal>
         ))}
+        </div>
         </div>
     )
 }

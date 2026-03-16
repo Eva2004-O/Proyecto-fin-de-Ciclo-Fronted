@@ -1,11 +1,11 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Index from "./Components/Index";
-import NotFount from "./Components/NotFound";
+import NotFount from "./Components/Footer/NotFound";
 import Logo from './assets/Logo.png';
-import Sobre_nosotros from "./Components/Sobre_nosotros";
-import Politica_privacidad from "./Components/Politica_privacidad";
-import Contacto from "./Components/Contacto";
+import Sobre_nosotros from "./Components/Footer/Sobre_nosotros";
+import Politica_privacidad from "./Components/Footer/Politica_privacidad";
+import Contacto from "./Components/Footer/Contacto";
 import List_Animals, { listAnimales } from "./Components/List_Animal";
 import Card_Animal_Details from "./Components/Card_Animal_Details";
 

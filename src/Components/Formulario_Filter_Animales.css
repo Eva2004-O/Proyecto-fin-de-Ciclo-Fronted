@@ -1,0 +1,64 @@
+/* CONTENEDOR DEL FORMULARIO */
+.form-filtros {
+  margin-top: 120px;
+  margin-bottom: 30px;
+  padding: 20px 25px;
+
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* LABELS */
+.form-filtros label {
+  font-weight: 600;
+  color: #ff7a26;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  display: block;
+  
+}
+
+/* INPUTS Y SELECTS */
+.form-filtros input,
+.form-filtros select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid #ff914d;
+  background: white;
+  font-size: 1rem;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+/* HOVER Y FOCUS */
+.form-filtros input:focus,
+.form-filtros select:focus {
+  outline: none;
+  border-color: #ff7a26;
+  box-shadow: 0 0 6px rgba(255, 122, 38, 0.4);
+}
+
+.form-filtros input:hover,
+.form-filtros select:hover {
+  border-color: #ff7a26;
+}
+
+
+.form-filtros .campo:nth-child(1){
+  margin-right: 30px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .form-filtros {
+    grid-template-columns: 1fr;
+    padding: 15px 20px;
+  }
+}

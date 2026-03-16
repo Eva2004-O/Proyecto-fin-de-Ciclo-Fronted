@@ -12,6 +12,14 @@
   margin-right: auto;
 }
 
+.contenedor-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+
 /* ANIMACIÓN SUAVE AL CARGAR */
 .contenedor-tarjetas > * {
   animation: fadeIn 0.6s ease forwards;
