@@ -6,8 +6,9 @@ import Logo from './assets/Logo.png';
 import Sobre_nosotros from "./Components/Footer/Sobre_nosotros";
 import Politica_privacidad from "./Components/Footer/Politica_privacidad";
 import Contacto from "./Components/Footer/Contacto";
-import List_Animals, { listAnimales } from "./Components/List_Animal";
-import Card_Animal_Details from "./Components/Card_Animal_Details";
+import List_Animals, { listAnimales } from "./Components/Animals/List_Animal";
+import Card_Animal_Details from "./Components/Animals/Card_Animal_Details";
+import Formulario_Adopcion from "./Components/Animals/Formulario_Adopción";
 
 function App() {
     return (
@@ -17,17 +18,28 @@ function App() {
 
   {/* NAVBAR */}
   <nav className="navbar">
-    <Link to="/" className="nav-logo">
-      <img src={Logo} alt="Logo" />
-    </Link>
-    <div className="nav-links">
-      <Link to="/animales">Adoptar</Link>
-      <Link to="/articulos">Merchandising</Link>
-      <Link to="/colabora">Colaborar</Link>
-      <Link to="/anuncios">Anuncios</Link>
-      <Link to="/administracion">Administración</Link>
+  <Link to="/" className="nav-logo">
+    <img src={Logo} alt="Logo" />
+  </Link>
+
+  <div className="nav-links">
+    <Link to="/animales">Adoptar</Link>
+    <Link to="/articulos">Merchandising</Link>
+    <Link to="/colabora">Colaborar</Link>
+    <Link to="/anuncios">Anuncios</Link>
+
+    {/* ADMINISTRACIÓN CON DESPLEGABLE */}
+    <div className="nav-admin">
+      <span className="admin-title">Administración</span>
+
+      <div className="admin-dropdown">
+        <Link to="/administracion/añadir-animal">Añadir animal</Link>
+        <Link to="/administracion/solicitudes">Solicitudes de adopción</Link>
+      </div>
     </div>
-  </nav>
+  </div>
+</nav>
+
 
   {/* CONTENIDO PRINCIPAL */}
   <main>
@@ -38,6 +50,7 @@ function App() {
       <Route path="/contacto" element={<Contacto></Contacto>}></Route>
       <Route path="/animales" element={<List_Animals></List_Animals>}></Route>
       <Route path="/animales/:id" element={<Card_Animal_Details animales={listAnimales}></Card_Animal_Details>}></Route>
+      <Route path="/animales/formulario/adopcion/:id" element={<Formulario_Adopcion></Formulario_Adopcion>}></Route>
       <Route path="*" element={<NotFount />} />
       
     </Routes>

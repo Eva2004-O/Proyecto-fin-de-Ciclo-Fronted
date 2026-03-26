@@ -1,0 +1,126 @@
+/* CONTENEDOR GENERAL */
+.form-adopcion {
+  margin-top: 120px;
+  margin-bottom: 40px;
+  padding: 30px 35px;
+
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* TÍTULO */
+.form-adopcion h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #ff7a26;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* LABELS */
+.form-adopcion label {
+  font-weight: 600;
+  color: #ff7a26;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* INPUTS Y SELECTS */
+.form-adopcion input,
+.form-adopcion select,
+.form-adopcion textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 2px solid #ff914d;
+  background: white;
+  font-size: 1rem;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+/* TEXTAREA */
+.form-adopcion textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* HOVER Y FOCUS */
+.form-adopcion input:focus,
+.form-adopcion select:focus,
+.form-adopcion textarea:focus {
+  outline: none;
+  border-color: #ff7a26;
+  box-shadow: 0 0 8px rgba(255, 122, 38, 0.4);
+}
+
+.form-adopcion input:hover,
+.form-adopcion select:hover,
+.form-adopcion textarea:hover {
+  border-color: #ff7a26;
+}
+
+/* CHECKBOX */
+.form-adopcion .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-adopcion .checkbox input {
+  width: 18px;
+  height: 18px;
+}
+
+/* BOTÓN */
+.form-adopcion button {
+  margin-top: 10px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #ff914d, #ff7a26);
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.form-adopcion button:hover {
+  background: linear-gradient(135deg, #ff7a26, #ff914d);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 122, 38, 0.4);
+}
+
+.form-adopcion button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .form-adopcion {
+    padding: 20px 22px;
+    gap: 18px;
+  }
+
+  .form-adopcion h2 {
+    font-size: 1.5rem;
+  }
+}

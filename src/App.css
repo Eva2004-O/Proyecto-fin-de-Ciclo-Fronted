@@ -26,11 +26,20 @@
   transform: scale(1.05);
 }
 
+.nav-links {
+  position: relative; /* NECESARIO para que el dropdown flote encima */
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  z-index: 2000; /* más alto que el navbar */
+}
+
+
 /* Enlaces */
 .nav-links a {
   color: white;
   text-decoration: none;
-  margin-left: 25px;
+  margin: 0 15px;;
   font-size: 1.2rem;
   font-weight: 500;
   transition: 0.3s ease;
@@ -99,3 +108,76 @@ main {
   padding-top: 80px; /* para el navbar */
   padding-bottom: 100px; /* para que el footer no tape nada */
 }
+
+/* CONTENEDOR DEL ITEM ADMIN */
+.nav-admin {
+  position: relative;
+  display: inline-block;
+  z-index: 3000; /* asegura que el hover no se corte */
+}
+
+
+
+/* TÍTULO ADMIN */
+.admin-title {
+  cursor: pointer;
+  font-weight: 600;
+  color: #ff7a26;
+  padding: 8px 12px;
+  transition: 0.3s ease;
+  margin: 0 15px;
+
+
+}
+
+.admin-title:hover {
+  color: #ff914d;
+}
+
+/* DESPLEGABLE */
+.admin-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  display: none;
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+
+  z-index: 99999; /* MUY ALTO para evitar bloqueos */
+  pointer-events: auto; /* asegura que reciba clics */
+}
+
+
+/* MOSTRAR AL HACER HOVER */
+.nav-admin:hover .admin-dropdown {
+  display: flex;
+}
+
+/* LINKS DEL DESPLEGABLE */
+.admin-dropdown a {
+  color: #ff7a26;
+  text-decoration: none;
+  padding: 6px 0;
+  font-weight: 600;
+  transition: 0.3s ease;
+
+}
+
+.admin-dropdown a:hover {
+  color: white;
+  background: #ff7a26;
+  padding-left: 10px;
+  border-radius: 8px;
+}
+
+.nav-admin:hover .admin-dropdown,
+.admin-dropdown:hover {
+  display: flex;
+}
+

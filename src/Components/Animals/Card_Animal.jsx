@@ -30,8 +30,9 @@ function Card_Animal({ id, imagen, nombre, edad, sexo, estado }) {
         <Link to={`/animales/${id}`}>
           <button className="btn-info">Más información</button>
         </Link>
-
+        <Link to={`/animales/formulario/adopcion/${id}`}>
         <button className="btn-adoptar">Adoptar</button>
+        </Link>
       </div>
 
     </div>

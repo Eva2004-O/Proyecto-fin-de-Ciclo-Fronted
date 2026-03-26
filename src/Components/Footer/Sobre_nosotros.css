@@ -84,6 +84,11 @@
   object-fit: cover;
 }
 
+.contenedor_imagenes_principal{
+  display: flex;
+  flex-direction: row;
+}
+
 /* GRID PARA SECCIONES CON IMÁGENES */
 .cada_dia,
 .equipo {

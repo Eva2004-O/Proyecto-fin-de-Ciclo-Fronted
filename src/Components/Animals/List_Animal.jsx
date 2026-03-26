@@ -12,10 +12,10 @@ import gatoFoto4 from '/src/assets/gato4.jpg';
 import gatoFoto5 from '/src/assets/gato5.jpg';
 
 import './List_Animal.css';
-import Formulario_Filtrar_Animales from "./Formulario_filtrar_Animales";
+import Formulario_Filtrar_Animales from "./Formulario_Filtrar_Animales";
 
 export const listAnimales = [
-    {id: "1", especie:"Perro", imagen:perroFoto1, nombre:"Troska", edad:"8", sexo:"HEMBRA", estado:"Disponible", peso:20, tamaño:"Mediano",
+    {id: "1", especie:"Perro", imagen:perroFoto1, nombre:"Troska", edad:"8", sexo:"HEMBRA", estado:"Disponible", peso:20, tamaño:"mediano",
     historia:"Troska estuvo toda su vida atada, y llegó con una inseguridad hacia las personas, que tras trabajo y dedicación, ha desaparecido por completo. Actualmente está completamente rehabilitada, es súper cariñosa, le encanta tomar el sol y los paseos. Le encanta ir a saludar a todo el mundo y es sociable con otros perros. Necesita licencia PPP. Ayúdanos a encontrarle el mejor hogar!"
  },
     {id: "2",especie:"Gato", imagen:gatoFoto1, nombre:"British", edad:"3", sexo:"HEMBRA", estado:"Disponible", peso:3, tamaño:"pequeño", 

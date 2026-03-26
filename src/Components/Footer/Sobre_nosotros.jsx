@@ -5,9 +5,11 @@ function Sobre_nosotros() {
     return (
         <div className="contenedor-principal">
             <h1 className="titulo-principal">Quienes Somos</h1>
+            <div className='contenedor_imagenes_principal'>
                 <img src="/src/assets/nosotros4.jpg"></img>
                 <img src="/src/assets/nosotros5.jpg"></img>
                 <img src="/src/assets/nosotros6.jpg"></img>
+                </div>
                 <p>Adopta con amor es una proctetora creada con un proposito muy real: dar una segunda oportunidad a perros y 
                     gatos que merecen un hogar lleno de cariño</p>
                 <p>Nacimos con la idea de que de que cada adopción cambie 2 vidas: la del animal y la persona que lo acoge. Nuestro

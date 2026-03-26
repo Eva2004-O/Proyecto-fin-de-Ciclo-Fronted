@@ -39,7 +39,9 @@ function Card_Animal_Details({animales}) {
           <div className="detalle-botones">
             <Link to="/animales">
             <button className="btn-volver">Volver</button></Link>
-            <button className="btn-adoptar">Adoptar</button>
+            <Link to={`/animales/formulario/adopcion/${id}`}>
+              <button className="btn-adoptar">Adoptar</button>
+            </Link>
           </div>
 
         </div>

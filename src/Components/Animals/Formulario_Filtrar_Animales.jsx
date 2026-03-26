@@ -65,8 +65,7 @@ function Formulario_Filtrar_Animales({ onFilterChange }) {
                     }}
                 >
                     <option value="">Todos</option>
-                    <option value="Mediano">Mini</option>
-                    <option value="Mediano">Mediano</option>
+                    <option value="mini">Mini</option>
                     <option value="pequeño">Pequeño</option>
                     <option value="mediano">Mediano</option>
                     <option value="grande">Grande</option>
