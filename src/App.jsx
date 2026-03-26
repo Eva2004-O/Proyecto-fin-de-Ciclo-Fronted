@@ -25,7 +25,16 @@ function App() {
   <div className="nav-links">
     <Link to="/animales">Adoptar</Link>
     <Link to="/articulos">Merchandising</Link>
-    <Link to="/colabora">Colaborar</Link>
+    <div className="nav-colabora">
+    <Link className="colabora-title" to="/colabora">Colaborar</Link>
+  <div className="colabora-dropdown">
+    <Link to="/colabora/voluntariado">Hazte voluntario</Link>
+    <Link to="/colabora/socio">Hazte socio</Link>
+    <Link to="/colabora/apadrinar">Hazte Padrino/Madrina</Link>
+    <Link to="/colabora/donaciones">Donaciones</Link>
+  </div>
+</div>
+
     <Link to="/anuncios">Anuncios</Link>
 
     {/* ADMINISTRACIÓN CON DESPLEGABLE */}
@@ -35,6 +44,11 @@ function App() {
       <div className="admin-dropdown">
         <Link to="/administracion/añadir-animal">Añadir animal</Link>
         <Link to="/administracion/solicitudes">Solicitudes de adopción</Link>
+        <Link to="/administracion/añadir-merchandising">Añadir Merchandiding</Link>
+        <Link to="/administracion/añadir-anuncios">Añadir anuncios</Link>
+        <Link to="/administracion/socios">Ver socios</Link>
+        <Link to="/administracion/apadrinar">Ver padrinos/madrinas</Link>
+        <Link to="/administracion/donacciones">Ver donaciones</Link>
       </div>
     </div>
   </div>

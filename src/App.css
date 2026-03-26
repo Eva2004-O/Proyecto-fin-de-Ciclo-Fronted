@@ -181,3 +181,72 @@ main {
   display: flex;
 }
 
+/* CONTENEDOR DEL ITEM COLABORAR */
+.nav-colabora {
+  position: relative;
+  display: inline-block;
+  z-index: 3000;
+}
+
+/* TÍTULO COLABORAR */
+.colabora-title {
+  cursor: pointer;
+  font-weight: 500;
+  color: white;
+  margin-left: 15px;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+}
+
+.colabora-title:hover {
+  color: #ff914d;
+}
+
+/* DESPLEGABLE COLABORAR */
+.colabora-dropdown {
+  position: absolute;
+  top: 100%; /* pegado al texto */
+  left: 0;
+
+  display: none;
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+
+  z-index: 99999;
+  pointer-events: auto;
+
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+
+/* MOSTRAR AL HACER HOVER */
+.nav-colabora:hover .colabora-dropdown,
+.colabora-dropdown:hover {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  animation: dropdownFade 0.25s ease forwards;
+}
+
+/* LINKS DEL DESPLEGABLE */
+.colabora-dropdown a {
+  color: #ff7a26;
+  text-decoration: none;
+  padding: 6px 0;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.colabora-dropdown a:hover {
+  color: white;
+  background: #ff7a26;
+  padding-left: 10px;
+  border-radius: 8px;
+}
