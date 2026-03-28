@@ -5,9 +5,9 @@ function Politica_privacidad() {
     return (
         <div className="contenedor-principal">
             <h1>Política De Privacidad</h1>
-            <p>En adopta con amor nos tomamos muy enserio la protección de tus datos personales</p>
-            <p>Esta política explica que información recopilamos, como la utilizamos y cuales son tus derechos como usuario</p>
-            <p>Nuestro objetivo es ser transparente y garantizar que tus datos estén siempre seguros</p>
+            <p>En adopta con amor nos tomamos muy enserio la protección de tus datos personales.<br></br>
+            Esta política explica que información recopilamos, como la utilizamos y cuales son tus derechos como usuario.<br></br>
+            Nuestro objetivo es ser transparente y garantizar que tus datos estén siempre seguros</p>
             <div className="datos-recopilamos">
                 <h2>Datos que recopilamos</h2>
                 <p>Recopilamos únicamente los datos necesarios para gestionar las adopciones y mejorar tu experiencia en la web</p>
@@ -63,7 +63,7 @@ function Politica_privacidad() {
                 <p>Puedes desativarlas desde tu navegador</p>
             </div>
             <div className="conservacion-datos">
-                <p>Conservación de datos:</p>
+                <h2>Conservación de datos:</h2>
                 <ul>
                     <li>Mientras dure el proceso de adopción</li>
                     <li>Mientras mantengas tu cuenta activa</li>

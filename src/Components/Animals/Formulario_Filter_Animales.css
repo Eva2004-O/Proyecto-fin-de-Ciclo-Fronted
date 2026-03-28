@@ -1,6 +1,6 @@
 /* CONTENEDOR DEL FORMULARIO */
 .form-filtros {
-  margin-top: 120px;
+  margin-top: 5px;
   margin-bottom: 30px;
   padding: 20px 25px;
 
@@ -10,7 +10,7 @@
   box-shadow: 0 4px 14px rgba(0,0,0,0.15);
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
 }
 

@@ -1,6 +1,6 @@
 /* CONTENEDOR PADRE DE LAS TARJETAS */
 .contenedor-tarjetas {
-  margin-top: 120px; /* espacio por el navbar fijo */
+  margin-top: 20px; /* espacio por el navbar fijo */
   padding: 20px;
 
   display: grid;

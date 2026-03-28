@@ -1,3 +1,4 @@
+/* NAVBAR */
 .navbar {
   width: 100%;
   padding: 12px 30px;
@@ -9,8 +10,8 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  justify-content: flex-start; 
-  gap: 30px; 
+  justify-content: flex-start;
+  gap: 30px;
 }
 
 /* Logo */
@@ -26,20 +27,19 @@
   transform: scale(1.05);
 }
 
+/* LINKS */
 .nav-links {
-  position: relative; /* NECESARIO para que el dropdown flote encima */
+  position: relative;
   display: flex;
   align-items: center;
   gap: 25px;
-  z-index: 2000; /* más alto que el navbar */
+  z-index: 2000;
 }
 
-
-/* Enlaces */
 .nav-links a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;;
+  margin: 0 15px;
   font-size: 1.2rem;
   font-weight: 500;
   transition: 0.3s ease;
@@ -49,34 +49,32 @@
   color: #ff914d;
   transform: translateY(-2px);
 }
+
+/* MAIN */
+main {
+  flex: 1;
+  padding-top: 65px;
+  padding-bottom: 100px;
+}
+
+/* FOOTER */
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
-
   width: 100%;
   padding: 20px 0;
-
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(6px);
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 1000;
 }
-
 
 .footer-content {
   text-align: center;
   color: white;
-}
-
-.footer-content p {
-  margin: 0;
-  font-size: 1rem;
-  opacity: 0.9;
 }
 
 .footer-links {
@@ -95,47 +93,39 @@
   color: #ff7a26;
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Toda la pantalla */
-}
 
-/* El main crece según el contenido */
-main {
-  flex: 1;
-  
-  padding-top: 80px; /* para el navbar */
-  padding-bottom: 100px; /* para que el footer no tape nada */
-}
+/* ----------------------------- */
+/* DROPDOWNS ESTABLES Y SIN SALTOS */
+/* ----------------------------- */
 
-/* CONTENEDOR DEL ITEM ADMIN */
-.nav-admin {
+.nav-admin,
+.nav-colabora {
   position: relative;
   display: inline-block;
-  z-index: 3000; /* asegura que el hover no se corte */
+  z-index: 3000;
 }
 
-
-
-/* TÍTULO ADMIN */
-.admin-title {
+/* TITULOS */
+.admin-title,
+.colabora-title {
   cursor: pointer;
-  font-weight: 600;
-  color: #ff7a26;
+  color: white;
+  font-weight: 500;
   padding: 8px 12px;
+  font-size: 1.2rem;
   transition: 0.3s ease;
   margin: 0 15px;
-
-
 }
 
-.admin-title:hover {
+.admin-title:hover,
+.colabora-title:hover {
   color: #ff914d;
+  transform: translateY(-2px);
 }
 
-/* DESPLEGABLE */
-.admin-dropdown {
+/* DROPDOWNS */
+.admin-dropdown,
+.colabora-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
@@ -145,108 +135,46 @@ main {
 
   background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(6px);
-  padding: 12px 18px;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-
-  z-index: 99999; /* MUY ALTO para evitar bloqueos */
-  pointer-events: auto; /* asegura que reciba clics */
-}
-
-
-/* MOSTRAR AL HACER HOVER */
-.nav-admin:hover .admin-dropdown {
-  display: flex;
-}
-
-/* LINKS DEL DESPLEGABLE */
-.admin-dropdown a {
-  color: #ff7a26;
-  text-decoration: none;
-  padding: 6px 0;
-  font-weight: 600;
-  transition: 0.3s ease;
-
-}
-
-.admin-dropdown a:hover {
-  color: white;
-  background: #ff7a26;
-  padding-left: 10px;
-  border-radius: 8px;
-}
-
-.nav-admin:hover .admin-dropdown,
-.admin-dropdown:hover {
-  display: flex;
-}
-
-/* CONTENEDOR DEL ITEM COLABORAR */
-.nav-colabora {
-  position: relative;
-  display: inline-block;
-  z-index: 3000;
-}
-
-/* TÍTULO COLABORAR */
-.colabora-title {
-  cursor: pointer;
-  font-weight: 500;
-  color: white;
-  margin-left: 15px;
-  font-size: 1.2rem;
-  transition: 0.3s ease;
-}
-
-.colabora-title:hover {
-  color: #ff914d;
-}
-
-/* DESPLEGABLE COLABORAR */
-.colabora-dropdown {
-  position: absolute;
-  top: 100%; /* pegado al texto */
-  left: 0;
-
-  display: none;
-  flex-direction: column;
-
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(6px);
-  padding: 12px 18px;
+  padding: 10px 0; /* padding vertical estable */
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.15);
 
   z-index: 99999;
-  pointer-events: auto;
 
   opacity: 0;
   transform: translateY(-8px);
   transition: opacity 0.25s ease, transform 0.25s ease;
+
+  min-width: 220px; /* evita saltos */
+  box-sizing: border-box;
 }
 
-
-/* MOSTRAR AL HACER HOVER */
+/* MOSTRAR */
+.nav-admin:hover .admin-dropdown,
+.admin-dropdown:hover,
 .nav-colabora:hover .colabora-dropdown,
 .colabora-dropdown:hover {
   display: flex;
   opacity: 1;
   transform: translateY(0);
-  animation: dropdownFade 0.25s ease forwards;
 }
 
-/* LINKS DEL DESPLEGABLE */
+/* ENLACES DEL DROPDOWN */
+.admin-dropdown a,
 .colabora-dropdown a {
   color: #ff7a26;
   text-decoration: none;
-  padding: 6px 0;
+  padding: 10px 16px; /* padding estable */
   font-weight: 600;
   transition: 0.3s ease;
+  display: block; /* evita huecos invisibles */
 }
 
+/* HOVER SIN SALTOS */
+.admin-dropdown a:hover,
 .colabora-dropdown a:hover {
   color: white;
   background: #ff7a26;
-  padding-left: 10px;
   border-radius: 8px;
+  padding-left: 16px; /* NO cambia respecto al normal */
 }

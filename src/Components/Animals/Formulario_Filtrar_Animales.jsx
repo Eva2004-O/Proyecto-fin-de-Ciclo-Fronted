@@ -8,6 +8,7 @@ function Formulario_Filtrar_Animales({ onFilterChange }) {
     const [sexo, setSexo] = useState("");
     const [tamaño, setTamaño] = useState("");
     const [estado, setEstado] = useState("");
+    const [especie, setEspecie] = useState("");
 
     const actualizarFiltros = (nuevoValor, campo) => {
         const nuevosFiltros = {
@@ -16,6 +17,7 @@ function Formulario_Filtrar_Animales({ onFilterChange }) {
             sexo,
             tamaño,
             estado,
+            especie,
             [campo]: nuevoValor
         };
         onFilterChange(nuevosFiltros);
@@ -36,6 +38,22 @@ function Formulario_Filtrar_Animales({ onFilterChange }) {
                         actualizarFiltros(e.target.value, "nombre");
                     }}
                 />
+            </div>
+
+            <div className="campo">
+                <label htmlFor="especie">Especie</label>
+                <select
+                    id="especie"
+                    value={especie}
+                    onChange={(e) => {
+                        setEspecie(e.target.value);
+                        actualizarFiltros(e.target.value, "especie");
+                    }}
+                >
+                    <option value="">Todos</option>
+                    <option value="PERRO">Perro</option>
+                    <option value="GATO">Gato</option>
+                </select>
             </div>
 
             <div className="campo">
