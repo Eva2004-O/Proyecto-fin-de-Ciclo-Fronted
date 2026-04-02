@@ -9,6 +9,8 @@ import Contacto from "./Components/Footer/Contacto";
 import List_Animals, { listAnimales } from "./Components/Animals/List_Animal";
 import Card_Animal_Details from "./Components/Animals/Card_Animal_Details";
 import Formulario_Adopcion from "./Components/Animals/Formulario_Adopción";
+import Gestion_Animal from "./Components/Animals/Gestion_Animal";
+import Formulario_Animal from "./Components/Animals/Formulario_Animal";
 
 function App() {
     return (
@@ -48,6 +50,7 @@ function App() {
         <Link to="/administracion/anuncios">Gestionar anuncios</Link>
         <Link to="/administracion/socios">Socios</Link>
         <Link to="/administracion/apadrinar">Padrinos/madrinas</Link>
+        <Link to="/administracion/voluntarios">Voluntarios</Link>
         <Link to="/administracion/donacciones">Donaciones</Link>
       </div>
     </div>
@@ -65,6 +68,9 @@ function App() {
       <Route path="/animales" element={<List_Animals></List_Animals>}></Route>
       <Route path="/animales/:id" element={<Card_Animal_Details animales={listAnimales}></Card_Animal_Details>}></Route>
       <Route path="/animales/formulario/adopcion/:id" element={<Formulario_Adopcion></Formulario_Adopcion>}></Route>
+      <Route path="/administracion/animales" element={<Gestion_Animal></Gestion_Animal>}></Route>
+      <Route path="/administracion/animales/formulario" element={<Formulario_Animal></Formulario_Animal>}></Route>
+      <Route path="/administracion/animales/formulario/:id" element={<Formulario_Animal></Formulario_Animal>}></Route>
       <Route path="*" element={<NotFount />} />
       
     </Routes>

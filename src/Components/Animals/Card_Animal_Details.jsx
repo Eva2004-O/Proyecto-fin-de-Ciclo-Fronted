@@ -1,10 +1,11 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import './Card_Animal_Details.css';
 
 
 function Card_Animal_Details({animales}) {
 
     const {id} = useParams()
+    const navigate = useNavigate();
 
     const animal = animales.find((a) => a.id === id);
 
@@ -37,8 +38,7 @@ function Card_Animal_Details({animales}) {
           </div>
 
           <div className="detalle-botones">
-            <Link to="/animales">
-            <button className="btn-volver">Volver</button></Link>
+            <button type="button" className="btn-volver" onClick={() => navigate(-1)}>Volver</button>
             <Link to={`/animales/formulario/adopcion/${id}`}>
               <button className="btn-adoptar">Adoptar</button>
             </Link>

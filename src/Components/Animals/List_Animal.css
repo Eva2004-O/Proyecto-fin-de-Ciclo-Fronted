@@ -26,6 +26,33 @@
   opacity: 0;
 }
 
+.paginacion {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.pagina-btn {
+  padding: 8px 14px;
+  border: none;
+  background: #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.pagina-btn:hover {
+  background: #bdbdbd;
+}
+
+.pagina-btn.activa {
+  background: #4caf50;
+  color: white;
+}
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;

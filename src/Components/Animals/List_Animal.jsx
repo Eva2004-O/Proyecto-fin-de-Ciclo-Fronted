@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card_Animal from "./Card_Animal";
 import perroFoto1 from '/src/assets/perro1.jpg';
 import gatoFoto1 from '/src/assets/gato1.jpg';
@@ -49,6 +49,8 @@ export const listAnimales = [
 
 function List_Animals() {
     const [animales, setAnimales] = useState(listAnimales)
+    const [paginaActual, setPaginaActual] = useState(1);
+    const animalesPorPagina = 9;
     const [filtros, setFiltros] =useState ({
         nombre: "",
         edad: "",
@@ -57,6 +59,13 @@ function List_Animals() {
         estado: "",
         especie: ""
     })
+
+    //useEffect(() => {
+    //fetch("http://localhost:9000/animal/list")
+    //  .then(res => res.json())
+    //  .then(data => setAnimales(data))
+    //  .catch(err => console.error("Error cargando animales:", err));
+  //}, []);
 
     const handleFilterChange = (newFilters) => {
         setFiltros(newFilters)
@@ -80,14 +89,24 @@ function List_Animals() {
         );
     })
 
+    const indexUltimo = paginaActual * animalesPorPagina;
+    const indexPrimero = indexUltimo - animalesPorPagina;
+    const animalesPaginados = animalesFiltrados.slice(indexPrimero, indexUltimo);
+
+    const totalPaginas = Math.ceil(animalesFiltrados.length / animalesPorPagina);
+
+    const cambiarPagina = (numero) => {
+        setPaginaActual(numero);
+    };
 
 
     return(
         <div className="contenedor-principal">
             <Formulario_Filtrar_Animales onFilterChange={handleFilterChange}></Formulario_Filtrar_Animales>
         <div  className="contenedor-tarjetas">
-         {animalesFiltrados.map((animal) => (
-          <Card_Animal key={animal.id} 
+         {animalesPaginados.map((animal) => (
+          <Card_Animal 
+          key={animal.id} 
           id={animal.id}
           imagen={animal.imagen} 
           nombre={animal.nombre} 
@@ -97,6 +116,18 @@ function List_Animals() {
           </Card_Animal>
         ))}
         </div>
+        <div className="paginacion">
+  {Array.from({ length: totalPaginas }, (_, i) => (
+    <button
+      key={i}
+      className={`pagina-btn ${paginaActual === i + 1 ? "activa" : ""}`}
+      onClick={() => cambiarPagina(i + 1)}
+    >
+      {i + 1}
+    </button>
+  ))}
+</div>
+        
         </div>
     )
 }
