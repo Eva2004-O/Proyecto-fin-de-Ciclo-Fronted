@@ -24,7 +24,7 @@ function Formulario_Filtrar_Animales({ onFilterChange }) {
     };
 
     return (
-        <form className="form-filtros">
+        <form className="form-filtros-animales">
 
             <div className="campo">
                 <label htmlFor="nombre">Nombre</label>

@@ -15,6 +15,7 @@ function Formulario_Adopcion(){
         otrosAnimales: "",
         horasSolo: "",
         motivacion: "",
+        animal: animal.nombre
     });
     const [aceptaContrato, setAceptaContrato ] =  useState(false)
     const { id } = useParams();

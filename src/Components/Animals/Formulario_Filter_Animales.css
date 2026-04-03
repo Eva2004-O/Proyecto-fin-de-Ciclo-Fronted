@@ -1,21 +1,22 @@
-/* CONTENEDOR DEL FORMULARIO */
-.form-filtros {
+.form-filtros-animales {
   margin-top: 5px;
   margin-bottom: 30px;
   padding: 20px 25px;
 
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
   border-radius: 16px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  column-gap: 24px;
+  row-gap: 16px;
 }
 
+
 /* LABELS */
-.form-filtros label {
+.form-filtros-animales label {
   font-weight: 600;
   color: #ff7a26;
   font-size: 0.95rem;
@@ -25,8 +26,8 @@
 }
 
 /* INPUTS Y SELECTS */
-.form-filtros input,
-.form-filtros select {
+.form-filtros-animales input,
+.form-filtros-animales select {
   width: 100%;
   padding: 10px 12px;
   border-radius: 10px;
@@ -37,27 +38,27 @@
   transition: 0.3s ease;
 }
 
+.form-filtros-animales .campo:nth-child(1){
+  margin-right: 30px;
+}
+
 /* HOVER Y FOCUS */
-.form-filtros input:focus,
-.form-filtros select:focus {
+.form-filtros-animales input:focus,
+.form-filtros-animales select:focus {
   outline: none;
   border-color: #ff7a26;
   box-shadow: 0 0 6px rgba(255, 122, 38, 0.4);
 }
 
-.form-filtros input:hover,
-.form-filtros select:hover {
+.form-filtros-animales input:hover,
+.form-filtros-animales select:hover {
   border-color: #ff7a26;
 }
 
 
-.form-filtros .campo:nth-child(1){
-  margin-right: 30px;
-}
-
 /* RESPONSIVE */
 @media (max-width: 600px) {
-  .form-filtros {
+  .form-filtros-animales {
     grid-template-columns: 1fr;
     padding: 15px 20px;
   }

@@ -16,7 +16,7 @@ const [formData, setFormData] = useState(
     especie: "",
     imagen: "",
     nombre: "",
-    edad: "",
+    fechaNacimiento: "",
     sexo: "",
     estado: "",
     peso: "",
@@ -59,15 +59,15 @@ useEffect(() => {
             <option value="GATO">Gato</option>
           </select>
 
-          <label>Imagen (URL)</label>
-          <input
-            type="text"
-            name="imagen"
-            value={formData.imagen}
-            onChange={handleChange}
-            required
-          />
-
+          <label>Imagen</label>
+<input
+  type="file"
+  accept="image/*"
+  onChange={(e) => {
+    const archivo = e.target.files[0];
+    setFormData({ ...formData, imagen: archivo });
+  }}
+/>
           <label>Nombre</label>
           <input
             type="text"
@@ -77,14 +77,15 @@ useEffect(() => {
             required
           />
 
-          <label>Edad</label>
-          <input
-            type="number"
-            name="edad"
-            value={formData.edad}
-            onChange={handleChange}
-            required
-          />
+          <label>Fecha de nacimiento</label>
+<input
+  type="date"
+  name="fechaNacimiento"
+  value={formData.fechaNacimiento}
+  onChange={handleChange}
+  required
+/>
+
 
           <label>Sexo</label>
           <select name="sexo" value={formData.sexo} onChange={handleChange} required>
@@ -98,7 +99,6 @@ useEffect(() => {
             <option value="">Seleccionar...</option>
             <option value="Disponible">Disponible</option>
             <option value="Adoptado">Adoptado</option>
-            <option value="En tratamiento">En tratamiento</option>
           </select>
 
           <label>Peso (kg)</label>
@@ -113,9 +113,11 @@ useEffect(() => {
           <label>Tamaño</label>
           <select name="tamaño" value={formData.tamaño} onChange={handleChange} required>
             <option value="">Seleccionar...</option>
-            <option value="pequeño">Pequeño</option>
-            <option value="mediano">Mediano</option>
-            <option value="grande">Grande</option>
+            <option value="MINI">Mini</option>
+            <option value="PEQUEÑO">Pequeño</option>
+            <option value="MEDIANO">Mediano</option>
+            <option value="GRANDE">Grande</option>
+            <option value="GIGANTE">Gigante</option>
           </select>
 
           <label>Historia</label>
@@ -124,6 +126,7 @@ useEffect(() => {
             value={formData.historia}
             onChange={handleChange}
             rows="4"
+            maxLength="255"
             required
           />
 

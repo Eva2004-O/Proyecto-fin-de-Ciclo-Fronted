@@ -1,0 +1,106 @@
+/* CONTENEDOR GENERAL */
+.detalle-container-solicitud {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #f7f7f7;
+}
+
+/* TARJETA PRINCIPAL */
+.detalle-card {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 16px;
+  padding: 30px 40px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* TITULO */
+.detalle-info h1 {
+  font-size: 1.9rem;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* BLOQUE DE DATOS */
+.detalle-datos {
+  background: #fff7f0;
+  border-left: 5px solid #ff914d;
+  padding: 20px 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.detalle-datos p {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: #444;
+}
+
+.detalle-datos strong {
+  color: #ff7a26;
+}
+
+/* HISTORIA / MOTIVACIÓN */
+.detalle-historia {
+  margin-top: 20px;
+}
+
+.detalle-historia h2 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.detalle-historia p {
+  background: #fafafa;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* BOTONES */
+.detalle-botones {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-volver {
+  background: #ff914d;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-volver:hover {
+  background: #ff7a26;
+  transform: translateY(-2px);
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .detalle-card {
+    padding: 20px;
+  }
+
+  .detalle-info h1 {
+    font-size: 1.5rem;
+  }
+}
