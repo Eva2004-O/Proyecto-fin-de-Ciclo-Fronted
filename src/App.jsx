@@ -13,6 +13,7 @@ import Gestion_Animal from "./Components/Animals/Gestion_Animal";
 import Formulario_Animal from "./Components/Animals/Formulario_Animal";
 import Gestion_Adopcion, { solicitudesAdopcion } from "./Components/Animals/Gestion_Adopcion";
 import Ver_Solicitud from "./Components/Animals/Ver_Solicitud";
+import Contrato_Adopcion from "./Components/Animals/Contrato_Adopcion";
 
 function App() {
     return (
@@ -47,6 +48,7 @@ function App() {
 
       <div className="admin-dropdown">
         <Link to="/administracion/animales">Gestionar animales</Link>
+        <Link to="/administracion/usuarios">Gestionar usuarios</Link>
         <Link to="/administracion/solicitudes">Solicitudes de adopción</Link>
         <Link to="/administracion/merchandising">Gestionar Merchandiding</Link>
         <Link to="/administracion/anuncios">Gestionar anuncios</Link>
@@ -75,6 +77,7 @@ function App() {
       <Route path="/administracion/animales/formulario/:id" element={<Formulario_Animal></Formulario_Animal>}></Route>
       <Route path="/administracion/solicitudes" element={<Gestion_Adopcion></Gestion_Adopcion>}></Route>
       <Route path="/administracion/solicitud/:id" element={<Ver_Solicitud solicitudes={solicitudesAdopcion}></Ver_Solicitud>}></Route>
+      <Route path="/animal/contrato" element={<Contrato_Adopcion />} />
       <Route path="*" element={<NotFount />} />
       
     </Routes>

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { listAnimales } from "./List_Animal";
 import './Formulario_Adopcion.css';
 
 function Formulario_Adopcion(){
-
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         nombre: "",
         email: "",
@@ -15,7 +15,7 @@ function Formulario_Adopcion(){
         otrosAnimales: "",
         horasSolo: "",
         motivacion: "",
-        animal: animal.nombre
+        animal: ""
     });
     const [aceptaContrato, setAceptaContrato ] =  useState(false)
     const { id } = useParams();
@@ -38,7 +38,7 @@ function Formulario_Adopcion(){
     return (
         <form className="form-adopcion" onSubmit={handleSubmit}>
             <h2>Formulario Adopcion de {animal.nombre}</h2>
-            <label>Nombre completo:</label>
+            <label>Nombre completo del adoptante:</label>
             <input
             type="text"
             name="nombre"
@@ -47,7 +47,7 @@ function Formulario_Adopcion(){
             required
             ></input>
 
-            <label>Email:</label>
+            <label>Email de Contacto:</label>
             <input
             type="email"
             name="email"
@@ -56,9 +56,9 @@ function Formulario_Adopcion(){
             required
             ></input>
 
-            <label>Teléfono:</label>
+            <label>Teléfono de Contacto:</label>
             <input
-            type="text"
+            type="tel"
             name="telefono"
             value={formData.telefono}
             onChange={handleChange}
@@ -82,11 +82,8 @@ function Formulario_Adopcion(){
             </select>
 
             <label>¿Tienes experiencia con animales?</label>
-            <select name="experiencia" value={formData.experiencia} onChange={handleChange}>
-                <option value="">Selecciona</option>
-                <option value="si">Si</option>
-                <option value="no">No</option>
-            </select>
+            <input type="text" name="experiencia" value={formData.experiencia} onChange={handleChange} placeholder="Animales anteriormente, Voluntariados...">
+            </input>
 
             <label>¿Tienes otros animales?</label>
             <input
@@ -98,18 +95,27 @@ function Formulario_Adopcion(){
             ></input>
 
             <label>¿Cuantas horas estaría solo?</label>
-            <select name="horasSolo" value={formData.horasSolo} onChange={handleChange}>
-                <option value="">Selecciona...</option>
-                <option value="1-3">1-3 horas</option>
-                <option value="3-6">3-6 horas</option>
-                <option value="+6">Mas de 6 horas</option>
-            </select>
+             <input
+            type="text"
+           name="horasSolo"
+            value={formData.horasSolo}
+            onChange={handleChange}
+            placeholder="3 horas"
+            ></input>
 
             <label>¿Por qué quieres adoptar?</label>
             <textarea
             name="motivacion"
             value={formData.motivacion}
             onChange={handleChange}></textarea>
+
+        <button
+            type="button"
+            className="btn-contrato"
+            onClick={() => navigate(`/animal/contrato`)}
+        >
+            Ver contrato de adopción
+        </button>
 
             <label className="checkbox">
                 <input
@@ -118,9 +124,8 @@ function Formulario_Adopcion(){
                 checked={aceptaContrato}
                 onChange={(e) => setAceptaContrato(e.target.checked)}
                 ></input>
-                Acepto el contrato
-            </label>
-
+                Acepto el contrato (firmar al recoger el animal)
+            </label>                
             <button type="submit" disabled={!aceptaContrato}>Enviar solicitud</button>
         </form>
     )

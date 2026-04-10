@@ -112,6 +112,32 @@
   transform: none;
 }
 
+/* BOTÓN VER CONTRATO */
+.btn-contrato {
+  padding: 12px 20px;
+  background: white;
+  border: 2px solid #ff914d;
+  color: #ff7a26;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+
+  /* Sombra suave para integrarlo con el estilo del formulario */
+  box-shadow: 0 3px 10px rgba(255, 122, 38, 0.15);
+}
+
+.btn-contrato:hover {
+  background: #ffe1cc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 122, 38, 0.3);
+}
+
+
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
