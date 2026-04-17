@@ -120,11 +120,15 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.12);
 }
 
-/* MÁS INFORMACIÓN */
 .btn-info {
   background: white;
-  color: #ff7a26;
   border: 2px solid #ff914d;
+  color: #ff7a26;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
 }
 
 .btn-info:hover {

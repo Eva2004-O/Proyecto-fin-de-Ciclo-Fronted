@@ -14,6 +14,8 @@ import Formulario_Animal from "./Components/Animals/Formulario_Animal";
 import Gestion_Adopcion, { solicitudesAdopcion } from "./Components/Animals/Gestion_Adopcion";
 import Ver_Solicitud from "./Components/Animals/Ver_Solicitud";
 import Contrato_Adopcion from "./Components/Animals/Contrato_Adopcion";
+import List_Articulos, { lista_articulos } from "./Components/Merchandising/List_Articulos";
+import Articulo_Card_Details from "./Components/Merchandising/Articulo_Card_Details";
 
 function App() {
     return (
@@ -58,6 +60,7 @@ function App() {
         <Link to="/administracion/donacciones">Donaciones</Link>
       </div>
     </div>
+    <Link to="/perfil">Perfil</Link>
   </div>
 </nav>
 
@@ -78,6 +81,8 @@ function App() {
       <Route path="/administracion/solicitudes" element={<Gestion_Adopcion></Gestion_Adopcion>}></Route>
       <Route path="/administracion/solicitud/:id" element={<Ver_Solicitud solicitudes={solicitudesAdopcion}></Ver_Solicitud>}></Route>
       <Route path="/animal/contrato" element={<Contrato_Adopcion />} />
+      <Route path="/articulos" element={<List_Articulos></List_Articulos>}></Route>
+      <Route path="/articulos/:id" element={<Articulo_Card_Details articulos={lista_articulos}></Articulo_Card_Details>}></Route>
       <Route path="*" element={<NotFount />} />
       
     </Routes>

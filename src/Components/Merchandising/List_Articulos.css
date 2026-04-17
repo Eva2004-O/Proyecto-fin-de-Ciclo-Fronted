@@ -1,0 +1,55 @@
+/* CONTENEDOR GENERAL */
+.contenedor-tarjetas-articulos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* PAGINACIÓN */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+/* BOTONES DE PÁGINA */
+.pagina-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 2px solid #ff914d;
+  background: white;
+  color: #ff7a26;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.pagina-btn:hover {
+  background: #ffe1cc;
+  transform: translateY(-2px);
+}
+
+/* PÁGINA ACTIVA */
+.pagina-btn.activa {
+  background: #ff914d;
+  color: white;
+  border-color: #ff914d;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 122, 38, 0.35);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .contenedor-tarjetas-articulos {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 18px;
+  }
+
+  .pagina-btn {
+    padding: 8px 12px;
+  }
+}

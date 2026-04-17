@@ -1,0 +1,122 @@
+/* CONTENEDOR GENERAL */
+.detalle-articulo-container {
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: #fafafa;
+}
+
+/* TARJETA PRINCIPAL */
+.detalle-articulo-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  max-width: 1000px;
+  width: 100%;
+  padding: 35px;
+  display: flex;
+  gap: 35px;
+  align-items: flex-start;
+}
+
+/* FOTO IZQUIERDA */
+.detalle-articulo-img {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  border: 4px solid #fff;
+}
+
+/* INFORMACIÓN DERECHA */
+.detalle-articulo-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* NOMBRE */
+.detalle-articulo-nombre {
+  font-size: 2.4rem;
+  color: #ff7a26;
+  margin: 0;
+}
+
+/* PRECIO */
+.detalle-articulo-precio {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+}
+
+
+/* DESCRIPCIÓN */
+.detalle-articulo-descripcion h2 {
+  font-size: 1.5rem;
+  color: #ff7a26;
+}
+
+.detalle-articulo-descripcion p {
+  background: #fafafa;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  line-height: 1.7;
+}
+
+/* BOTONES */
+.detalle-articulo-botones {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* BOTÓN VOLVER */
+.btn-volver {
+  padding: 12px 20px;
+  background: white;
+  border: 2px solid #ff914d;
+  color: #ff7a26;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn-volver:hover {
+  background: #ffe1cc;
+  transform: translateY(-2px);
+}
+
+/* BOTÓN COMPRAR */
+.btn-comprar {
+  padding: 12px 20px;
+  background: #ff914d;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn-comprar:hover {
+  background: #ff7a26;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .detalle-articulo-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detalle-articulo-img {
+    width: 100%;
+    height: auto;
+  }
+}

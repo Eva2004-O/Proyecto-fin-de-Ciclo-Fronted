@@ -14,13 +14,10 @@ function Card_Animal_Details({animales}) {
      <div className="detalle-container">
   <div className="detalle-card">
 
-    {/* NOMBRE ARRIBA */}
     <h1 className="detalle-nombre">{animal.nombre}</h1>
 
-    {/* FOTO DEBAJO DEL NOMBRE */}
     <img className="detalle-img" src={animal.imagen} alt={animal.nombre} />
 
-    {/* INFORMACIÓN DEL ANIMAL */}
     <div className="detalle-info">
 
       <span className={`detalle-estado ${animal.estado === "Adoptado" ? "adoptado" : "en-adopcion"}`}>
