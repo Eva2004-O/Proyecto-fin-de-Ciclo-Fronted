@@ -15,7 +15,8 @@ function Formulario_Adopcion(){
         otrosAnimales: "",
         horasSolo: "",
         motivacion: "",
-        animal: ""
+        animal: "",
+        tipoContrato: ""
     });
     const [aceptaContrato, setAceptaContrato ] =  useState(false)
     const { id } = useParams();
@@ -64,6 +65,13 @@ function Formulario_Adopcion(){
             onChange={handleChange}
             required
             ></input>
+
+            <label>¿Adopción o Acogida?:</label>
+            <select name="tipo-contrato" value={formData.tipoContrato} onChange={handleChange}>
+                <option value="">Selecciona...</option>
+                <option value="ADOPCION">Adopcion</option>
+                <option value="ACOGIDA">Acogida</option>
+            </select>
 
             <label>Ciudad:</label>
             <input

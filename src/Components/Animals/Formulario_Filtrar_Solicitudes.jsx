@@ -5,6 +5,7 @@ function Formulario_Filtrar_Solicitudes({ onFilterChange }){
     const [animal, setAnimal] = useState("");
     const [email, setEmail] = useState("");
     const [telefono, setTelefono] = useState("");
+    const [tipoContrato, setTipoContrato] = useState("")
 
     const actualizarFiltros = (nuevoValor, campo) => {
         const nuevosFiltros = {
@@ -12,6 +13,7 @@ function Formulario_Filtrar_Solicitudes({ onFilterChange }){
             animal,
             email,
             telefono,
+            tipoContrato,
             [campo]: nuevoValor
         };
         onFilterChange(nuevosFiltros);
@@ -73,8 +75,17 @@ function Formulario_Filtrar_Solicitudes({ onFilterChange }){
                     }}
                 />
             </div>
-            
-
+            <div className="campo">
+            <label htmlFor="tipoContrato">¿Adopción o Acogida?:</label>
+            <select name="tipoContrato" value={tipoContrato} onChange={(e) => {
+                        setTipoContrato(e.target.value);
+                        actualizarFiltros(e.target.value, "tipoContrato");
+                    }}>
+                <option value="">Selecciona...</option>
+                <option value="ADOPCION">Adopcion</option>
+                <option value="ACOGIDA">Acogida</option>
+            </select>
+            </div>
         </form>
     );
 }

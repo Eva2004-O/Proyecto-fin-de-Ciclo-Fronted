@@ -16,6 +16,10 @@ import Ver_Solicitud from "./Components/Animals/Ver_Solicitud";
 import Contrato_Adopcion from "./Components/Animals/Contrato_Adopcion";
 import List_Articulos, { lista_articulos } from "./Components/Merchandising/List_Articulos";
 import Articulo_Card_Details from "./Components/Merchandising/Articulo_Card_Details";
+import Colabora from "./Components/Colabora/Colabora";
+import Table_Articulos from "./Components/Merchandising/Table_Articulos";
+import Gestion_Articulos from "./Components/Merchandising/Gestion_articulos";
+import Formulario_Articulos from "./Components/Merchandising/Formulario_Articulos";
 
 function App() {
     return (
@@ -35,10 +39,10 @@ function App() {
     <div className="nav-colabora">
     <Link className="colabora-title" to="/colabora">Colaborar</Link>
   <div className="colabora-dropdown">
-    <Link to="/colabora/voluntariado">Hazte voluntario</Link>
     <Link to="/colabora/socio">Hazte socio</Link>
     <Link to="/colabora/apadrinar">Hazte Padrino/Madrina</Link>
     <Link to="/colabora/donaciones">Donaciones</Link>
+    <Link to="/colabora/voluntariado">Hazte voluntario</Link>
   </div>
 </div>
 
@@ -83,6 +87,10 @@ function App() {
       <Route path="/animal/contrato" element={<Contrato_Adopcion />} />
       <Route path="/articulos" element={<List_Articulos></List_Articulos>}></Route>
       <Route path="/articulos/:id" element={<Articulo_Card_Details articulos={lista_articulos}></Articulo_Card_Details>}></Route>
+      <Route path="/colabora" element={<Colabora></Colabora>}></Route>
+      <Route path="/administracion/merchandising" element={<Gestion_Articulos></Gestion_Articulos>}></Route>
+      <Route path="/administracion/merchandising/formulario" element={<Formulario_Articulos></Formulario_Articulos>}></Route>
+      <Route path="/administracion/merchandising/formulario/:id" element={<Formulario_Articulos></Formulario_Articulos>}></Route>
       <Route path="*" element={<NotFount />} />
       
     </Routes>

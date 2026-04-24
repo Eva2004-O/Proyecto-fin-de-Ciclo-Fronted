@@ -16,6 +16,7 @@ return (
             <th>Correo</th>
             <th>Teléfono</th>
             <th>Ciudad</th>
+            <th>Adopción o Acogida</th>
             <th>Acciones</th>
           </tr>
         </thead>

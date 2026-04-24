@@ -39,6 +39,21 @@
   color: #333;
   transition: 0.2s ease;
 }
+.form-filtros select {
+  width: 106%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid #ff914d;
+  background: white;
+  font-size: 0.95rem;
+  color: #333;
+  transition: 0.2s ease;
+}
+.form-filtros select:focus {
+  outline: none;
+  border-color: #ff7a26;
+  box-shadow: 0 0 6px rgba(255, 122, 38, 0.4);
+}
 
 .form-filtros input:focus {
   outline: none;
@@ -67,6 +82,7 @@
 .form-filtros .campo:nth-child(6){
   margin-right: 30px;
 }
+
 
 /* RESPONSIVE */
 @media (max-width: 768px) {

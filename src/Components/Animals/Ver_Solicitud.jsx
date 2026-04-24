@@ -25,6 +25,7 @@ function Ver_Solicitud({solicitudes}){
         <p><strong>Experiencia con animales:</strong> {solicitud.experiencia || "No especificado"}</p>
         <p><strong>Otros animales:</strong> {solicitud.otrosAnimales || "No especificado"}</p>
         <p><strong>Horas solo:</strong> {solicitud.horasSolo || "No especificado"}</p>
+        <p><strong>Tipo contrato:</strong>{solicitud.tipoContrato}</p>
       </div>
 
       <div className="detalle-historia">

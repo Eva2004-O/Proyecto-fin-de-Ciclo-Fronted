@@ -14,7 +14,8 @@ export const solicitudesAdopcion = [
     otrosAnimales: "Un gato de 3 años",
     horasSolo: "4 horas al día",
     motivacion: "Quiero darle un hogar estable y mucho cariño.",
-    animal: "Valentina"
+    animal: "Valentina",
+     tipoContrato: "ACOGIDA"
   },
   {
     id:"2",
@@ -27,7 +28,8 @@ export const solicitudesAdopcion = [
     otrosAnimales: "No",
     horasSolo: "1-2 horas al día",
     motivacion: "Busco un compañero para mis rutas de senderismo.",
-    animal: "Mikado"
+    animal: "Mikado",
+     tipoContrato: "ADOPCION"
   },
   {
     id:"3",
@@ -40,7 +42,8 @@ export const solicitudesAdopcion = [
     otrosAnimales: "No",
     horasSolo: "6 horas al día",
     motivacion: "Quiero adoptar para dar una segunda oportunidad a un animal.",
-    animal: "Zarzamo" 
+    animal: "Zarzamo",
+     tipoContrato: "ACOGIDA" 
   },
   {
     id: "4",
@@ -53,7 +56,8 @@ export const solicitudesAdopcion = [
     otrosAnimales: "Dos perros sociables",
     horasSolo: "0-1 horas al día",
     motivacion: "Busco un nuevo miembro para la familia.",
-    animal: "Troska"
+    animal: "Troska",
+    tipoContrato: "ADOPCION"
   },
   {
     id:"5",
@@ -66,7 +70,8 @@ export const solicitudesAdopcion = [
     otrosAnimales: "Un conejo",
     horasSolo: "5 horas al día",
     motivacion: "Me gustaría adoptar para tener compañía y cuidar de un animal necesitado.",
-    animal: "Toby"
+    animal: "Toby",
+     tipoContrato: "ACOGIDA"
   }
 ];
 
@@ -81,7 +86,8 @@ function Gestion_Adopcion(){
         nombre: "",
         animal: "",
         telefono: "",
-        email: ""
+        email: "",
+        tipoContrato: ""
     })
   // --- ACCIONES ---
   
@@ -113,7 +119,8 @@ const cancelarEliminar = () => {
             (filtros.nombre === "" || solicitud.nombre.toLowerCase().includes(filtros.nombre.toLowerCase())) &&
             (filtros.animal === "" || solicitud.animal.toLowerCase().includes(filtros.animal.toLowerCase())) &&
             (filtros.telefono === "" || solicitud.telefono.toLowerCase().includes(filtros.telefono.toLowerCase())) &&
-            (filtros.email === "" || solicitud.email.toLowerCase().includes(filtros.email.toLowerCase()))
+            (filtros.email === "" || solicitud.email.toLowerCase().includes(filtros.email.toLowerCase())) &&
+            (filtros.tipoContrato === "" || solicitud.tipoContrato.toLowerCase().includes(filtros.tipoContrato.toLowerCase()))
         );
     })
     const indexUltimo = paginaActual * solicitudesPorPagina;
