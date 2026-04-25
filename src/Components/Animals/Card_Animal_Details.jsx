@@ -40,7 +40,7 @@ function Card_Animal_Details({animales}) {
       <div className="detalle-botones">
         <button type="button" className="btn-volver" onClick={() => navigate(-1)}>Volver</button>
         <Link to={`/animales/formulario/adopcion/${id}`}>
-          <button className="btn-adoptar">Adoptar</button>
+          <button className="btn-adoptar">Preguntar</button>
         </Link>
       </div>
 

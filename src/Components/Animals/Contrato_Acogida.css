@@ -1,93 +1,98 @@
 .contrato-container {
+  margin-top: 120px;
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
-  background: #fafafa;
+  padding: 20px;
 }
 
 .contrato-card {
+  background: white;
   max-width: 900px;
   width: 100%;
-  background: #ffffff;
+  padding: 30px 40px;
   border-radius: 18px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  padding: 30px 40px;
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Encabezado */
-.contrato-header {
+.contrato-titulo {
   text-align: center;
-  margin-bottom: 25px;
-}
-
-.contrato-header h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #ff7a26;
   margin-bottom: 5px;
 }
 
 .contrato-subtitulo {
-  font-size: 0.95rem;
-  color: #666;
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
 }
 
-.contrato-fecha {
-  font-size: 0.9rem;
-  color: #888;
+.contrato-seccion {
+  margin-bottom: 22px;
 }
 
-/* Bloques */
-.contrato-bloque {
-  margin-bottom: 20px;
-}
-
-.contrato-bloque h2 {
+.contrato-seccion h2 {
   font-size: 1.2rem;
   color: #ff7a26;
   margin-bottom: 8px;
 }
 
-.contrato-bloque p,
-.contrato-bloque li {
-  font-size: 0.98rem;
-  line-height: 1.6;
-  color: #444;
+.contrato-seccion p {
+  margin: 4px 0;
+  color: #333;
 }
 
-.contrato-bloque ol {
+.contrato-lista {
   padding-left: 20px;
+  color: #333;
 }
 
-/* Firmas */
-.contrato-firmas {
+.campo-linea {
+  display: inline-block;
+  min-width: 120px;
+  border-bottom: 1px solid #999;
+  margin: 0 6px;
+}
+
+.firmas {
   margin-top: 30px;
 }
 
-.firma-lineas {
+.firmas-contenedor {
   display: flex;
   justify-content: space-between;
+  margin-top: 25px;
   gap: 40px;
-  margin-top: 30px;
 }
 
-.linea-firma {
+.firma-bloque {
+  flex: 1;
+  text-align: center;
+}
+
+.firma-linea {
   margin-top: 40px;
   border-top: 1px solid #333;
 }
 
-/* Responsive */
-@media (max-width: 700px) {
-  .contrato-card {
-    padding: 20px;
-  }
-
-  .firma-lineas {
-    flex-direction: column;
-    gap: 25px;
-  }
+/* Botón imprimir */
+.btn-imprimir {
+  margin-top: 25px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #ff914d, #ff7a26);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
 }
 
+.btn-imprimir:hover {
+  filter: brightness(1.05);
+}
 .btn-volver {
   margin-top: 20px;
   padding: 10px 18px;
@@ -209,4 +214,3 @@
     display: none !important;
   }
 }
-

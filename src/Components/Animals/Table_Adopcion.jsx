@@ -30,6 +30,7 @@ return (
               <td>{solicitud.email}</td>
               <td>{solicitud.telefono}</td>
               <td>{solicitud.ciudad}</td>
+              <td>{solicitud.tipoContrato}</td>
 
               {/* ACCIONES */}
               <td className="acciones">

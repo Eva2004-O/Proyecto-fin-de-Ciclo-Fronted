@@ -22,6 +22,7 @@ import Gestion_Articulos from "./Components/Merchandising/Gestion_articulos";
 import Formulario_Articulos from "./Components/Merchandising/Formulario_Articulos";
 import List_Anuncios, { lista_eventos } from "./Components/Anuncios/List_Anuncios";
 import Anuncios_Card_Details from "./Components/Anuncios/Anuncios_Card_Details";
+import Contrato_Acogida from "./Components/Animals/Contrato_Acogida";
 
 function App() {
     return (
@@ -95,6 +96,8 @@ function App() {
       <Route path="/administracion/merchandising/formulario/:id" element={<Formulario_Articulos></Formulario_Articulos>}></Route>
       <Route path="/anuncios" element={<List_Anuncios></List_Anuncios>}></Route>
       <Route path="/anuncios/:id" element={<Anuncios_Card_Details></Anuncios_Card_Details>}></Route>
+      <Route path="/contrato/adopcion" element={<Contrato_Adopcion></Contrato_Adopcion>}></Route>
+      <Route path="/contrato/acogida" element={<Contrato_Acogida></Contrato_Acogida>}></Route>
       <Route path="*" element={<NotFount />} />
       
     </Routes>

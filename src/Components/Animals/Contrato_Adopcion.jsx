@@ -1,121 +1,123 @@
-import './Contrato_Adopcion.css';
-import { Navigate } from 'react-router-dom';
-function Contrato_Adopcion(){
+import "./Contrato_Adopcion.css";
 
-    return (
-        <div className="contrato-container">
-  <div className="contrato-card">
+function Contrato_Adopcion() {
+  const hoy = new Date().toLocaleDateString("es-ES");
 
-    <header className="contrato-header">
-      <h1>Contrato de Adopción</h1>
-      <p className="contrato-subtitulo">Adopta con Amor · [Vigo]</p>
-      <p className="contrato-fecha">Fecha: ____ / ____ / ______</p>
-    </header>
+  return (
+    <div className="contrato-container">
+      <div className="contrato-card">
 
-    <section className="contrato-bloque">
-      <h2>Datos de la protectora</h2>
-      <p><strong>Nombre:</strong> [Adopta con Amor]</p>
-      <p><strong>CIF:</strong> [64732098P]</p>
-      <p><strong>Dirección:</strong> [Camiño da Esperanza 12, Vigo, Galicia]</p>
-      <p><strong>Teléfono:</strong> [+34 600 123 456]</p>
-      <p><strong>Email:</strong> [contacto@adoptaConAmor.es]</p>
-    </section>
+        <h1 className="contrato-titulo">Contrato de Adopción</h1>
+        <p className="contrato-subtitulo">
+          Entre la protectora y la persona adoptante se establece el siguiente acuerdo:
+        </p>
 
-    <section className="contrato-bloque">
-      <h2>Datos del animal</h2>
-      <p><strong>Nombre:</strong>________________________</p>
-      <p><strong>Especie:</strong>________________</p>
-      <p><strong>Sexo:</strong>_________</p>
-      <p><strong>Edad aproximada:</strong>______ años</p>
-      <p><strong>Nº microchip:</strong>_________________________</p>
-    </section>
+        {/* DATOS DE LA PROTECTORA */}
+        <section className="contrato-seccion">
+          <h2>1. Datos de la protectora</h2>
+          <p><strong>Nombre:</strong> Protectora ____________________________</p>
+          <p><strong>CIF:</strong> ____________________________</p>
+          <p><strong>Dirección:</strong> ____________________________</p>
+          <p><strong>Teléfono:</strong> ____________________________</p>
+          <p><strong>Email:</strong> ____________________________</p>
+        </section>
 
-    <section className="contrato-bloque">
-      <h2>Datos de la persona adoptante</h2>
-      <p><strong>Nombre completo:</strong>______________________</p>
-      <p><strong>DNI/NIE:</strong>_________________</p>
-      <p><strong>Dirección:</strong>_________________________</p>
-      <p><strong>Teléfono:</strong>_______________</p>
-      <p><strong>Email:</strong>____________________</p>
-    </section>
+        {/* DATOS DEL ANIMAL */}
+        <section className="contrato-seccion">
+          <h2>2. Datos del animal adoptado</h2>
+          <p><strong>Nombre:</strong> ____________________________</p>
+          <p><strong>Especie:</strong> Perro / Gato </p>
+          <p><strong>Raza (si se conoce):</strong> ____________________________</p>
+          <p><strong>Sexo:</strong> Macho / Hembra</p>
+          <p><strong>Edad aproximada:</strong> ____________________________</p>
+          <p><strong>Nº microchip:</strong> ____________________________</p>
+        </section>
 
-    <section className="contrato-bloque">
-      <h2>Objeto del contrato</h2>
-      <p>
-        LA PROTECTORA cede en adopción el animal descrito en el presente documento a LA PERSONA ADOPTANTE,
-        quien se compromete a cumplir las condiciones establecidas en este contrato, velando siempre por el
-        bienestar del animal.
-      </p>
-    </section>
+        {/* DATOS DEL ADOPTANTE */}
+        <section className="contrato-seccion">
+          <h2>3. Datos de la persona adoptante</h2>
+          <p><strong>Nombre y apellidos:</strong> ____________________________</p>
+          <p><strong>DNI/NIE:</strong> ____________________________</p>
+          <p><strong>Dirección:</strong> ____________________________</p>
+          <p><strong>Teléfono:</strong> ____________________________</p>
+          <p><strong>Email:</strong> ____________________________</p>
+        </section>
 
-    <section className="contrato-bloque">
-      <h2>Obligaciones de la persona adoptante</h2>
-      <ol>
-        <li>Proporcionar al animal alimentación adecuada, agua, cuidados higiénicos y un entorno seguro.</li>
-        <li>Garantizar su bienestar físico y emocional, evitando cualquier situación de maltrato o negligencia.</li>
-        <li>Facilitar atención veterinaria, incluyendo vacunas, desparasitaciones, revisiones y tratamientos necesarios.</li>
-        <li>No abandonar, vender, regalar ni ceder al animal sin comunicarlo previamente a LA PROTECTORA.</li>
-        <li>No utilizar al animal para cría, peleas, explotación o actividades lucrativas.</li>
-        <li>Informar a LA PROTECTORA en caso de pérdida, fuga, enfermedad grave o fallecimiento del animal.</li>
-        <li>Permitir, si fuera necesario, seguimiento del caso por parte de LA PROTECTORA.</li>
-        <li>En caso de no poder mantener al animal, devolverlo a LA PROTECTORA.</li>
-      </ol>
-    </section>
+        {/* OBLIGACIONES DEL ADOPTANTE */}
+        <section className="contrato-seccion">
+          <h2>4. Obligaciones de la persona adoptante</h2>
+          <ol className="contrato-lista">
+            <li>Proporcionar al animal alimentación adecuada, agua y cuidados veterinarios necesarios.</li>
+            <li>Garantizar un entorno seguro, estable y libre de maltrato o negligencia.</li>
+            <li>No abandonar, regalar, vender ni ceder al animal sin comunicarlo previamente a la protectora.</li>
+            <li>No utilizar al animal para cría, explotación o actividades lucrativas.</li>
+            <li>Informar a la protectora en caso de pérdida, fuga, enfermedad grave o fallecimiento.</li>
+            <li>Permitir seguimiento del caso si la protectora lo considera necesario.</li>
+            <li>En caso de no poder mantener al animal, devolverlo a la protectora.</li>
+          </ol>
+        </section>
 
-    <section className="contrato-bloque">
-      <h2>Obligaciones de la protectora</h2>
-      <ol>
-        <li>Entregar al animal en las mejores condiciones posibles de salud.</li>
-        <li>Facilitar información sobre su carácter, historial y necesidades conocidas.</li>
-        <li>Proporcionar la documentación veterinaria disponible (vacunas, microchip, tratamientos, etc.).</li>
-        <li>Ofrecer asesoramiento básico durante el proceso de adaptación.</li>
-      </ol>
-    </section>
+        {/* OBLIGACIONES DE LA PROTECTORA */}
+        <section className="contrato-seccion">
+          <h2>5. Obligaciones de la protectora</h2>
+          <ol className="contrato-lista">
+            <li>Entregar al animal en las mejores condiciones de salud posibles.</li>
+            <li>Facilitar información sobre su carácter, historial y necesidades conocidas.</li>
+            <li>Proporcionar documentación veterinaria disponible (vacunas, microchip, tratamientos).</li>
+            <li>Ofrecer asesoramiento básico durante el proceso de adaptación.</li>
+          </ol>
+        </section>
 
-    <section className="contrato-bloque">
-      <h2>Protección de datos</h2>
-      <p>
-        Los datos personales facilitados por LA PERSONA ADOPTANTE serán tratados conforme a la normativa vigente
-        y utilizados exclusivamente para la gestión de la adopción y el seguimiento del animal.
-      </p>
-    </section>
+        {/* PROTECCIÓN DE DATOS */}
+        <section className="contrato-seccion">
+          <h2>6. Protección de datos</h2>
+          <p>
+            Los datos personales facilitados por la persona adoptante serán tratados conforme a la normativa vigente
+            y utilizados exclusivamente para la gestión de la adopción y el seguimiento del animal.
+          </p>
+        </section>
 
-    <section className="contrato-bloque">
-      <h2>Resolución del contrato</h2>
-      <p>
-        LA PROTECTORA podrá revocar la adopción y recuperar al animal si detecta maltrato, negligencia,
-        incumplimiento grave de las obligaciones o condiciones inadecuadas para su bienestar.
-      </p>
-    </section>
+        {/* RESOLUCIÓN */}
+        <section className="contrato-seccion">
+          <h2>7. Resolución del contrato</h2>
+          <p>
+            La protectora podrá revocar la adopción y recuperar al animal si detecta maltrato, negligencia,
+            incumplimiento grave de las obligaciones o condiciones inadecuadas para su bienestar.
+          </p>
+        </section>
 
-    <section className="contrato-bloque">
-      <h2>Aceptación</h2>
-      <p>
-        Ambas partes declaran haber leído y comprendido el contenido del presente contrato, aceptando todas sus
-        cláusulas.
-      </p>
-    </section>
+        {/* FIRMAS */}
+        <section className="contrato-seccion firmas">
+          <div>
+            <p>En ______________________, a {hoy}</p>
+          </div>
 
-    <section className="contrato-firmas">
-      <div className="firma-bloque">
-        <p>En [Vigo], a ____ / ____ / ______</p>
-      </div>
-      <div className="firma-lineas">
-        <div>
-          <p>Firma de la Protectora</p>
-          <div className="linea-firma"></div>
-        </div>
-        <div>
-          <p>Firma de la Persona Adoptante</p>
-          <div className="linea-firma"></div>
-        </div>
-      </div>
-    </section>
+          <div className="firmas-contenedor">
+            <div className="firma-bloque">
+              <p><strong>Firma de la protectora</strong></p>
+              <div className="firma-linea"></div>
+            </div>
 
-  </div>
+            <div className="firma-bloque">
+              <p><strong>Firma de la persona adoptante</strong></p>
+              <div className="firma-linea"></div>
+            </div>
+          </div>
+        </section>
+
+<div className="contrato-botones">
+  <button className="btn-volver" onClick={() => window.history.back()}>
+    Volver
+  </button>
+
+  <button className="btn-imprimir" onClick={() => window.print()}>
+    Imprimir
+  </button>
 </div>
 
-    )
+      </div>
+    </div>
+  );
 }
 
 export default Contrato_Adopcion;

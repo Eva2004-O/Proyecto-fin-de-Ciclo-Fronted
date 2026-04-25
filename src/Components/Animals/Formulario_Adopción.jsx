@@ -67,7 +67,7 @@ function Formulario_Adopcion(){
             ></input>
 
             <label>¿Adopción o Acogida?:</label>
-            <select name="tipo-contrato" value={formData.tipoContrato} onChange={handleChange}>
+            <select name="tipoContrato" value={formData.tipoContrato} onChange={handleChange}>
                 <option value="">Selecciona...</option>
                 <option value="ADOPCION">Adopcion</option>
                 <option value="ACOGIDA">Acogida</option>
@@ -117,13 +117,27 @@ function Formulario_Adopcion(){
             value={formData.motivacion}
             onChange={handleChange}></textarea>
 
-        <button
-            type="button"
-            className="btn-contrato"
-            onClick={() => navigate(`/animal/contrato`)}
-        >
-            Ver contrato de adopción
-        </button>
+       {/* BOTÓN CONTRATO SEGÚN TIPO */}
+{formData.tipoContrato === "ADOPCION" && (
+  <button
+    type="button"
+    className="btn-contrato"
+    onClick={() => navigate(`/contrato/adopcion`)}
+  >
+    Ver contrato de adopción
+  </button>
+)}
+
+{formData.tipoContrato === "ACOGIDA" && (
+  <button
+    type="button"
+    className="btn-contrato"
+    onClick={() => navigate(`/contrato/acogida`)}
+  >
+    Ver contrato de acogida
+  </button>
+)}
+
 
             <label className="checkbox">
                 <input
