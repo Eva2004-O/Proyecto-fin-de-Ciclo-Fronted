@@ -1,0 +1,63 @@
+/* CONTENEDOR GENERAL */
+.lista-eventos {
+  margin-top: 120px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* TÍTULO */
+.titulo-eventos {
+  font-size: 2.4rem;
+  color: #ff7a26;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+/* SUBTÍTULO */
+.subtitulo-eventos {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+/* GRID */
+.contenedor-eventos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* PAGINACIÓN */
+.paginacion-eventos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.pagina-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 2px solid #ff914d;
+  background: white;
+  color: #ff7a26;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.pagina-btn:hover {
+  background: #ffe1cc;
+  transform: translateY(-2px);
+}
+
+.pagina-btn.activa {
+  background: #ff914d;
+  color: white;
+  border-color: #ff914d;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 122, 38, 0.35);
+}

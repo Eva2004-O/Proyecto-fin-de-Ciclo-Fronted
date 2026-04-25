@@ -1,0 +1,104 @@
+/* CONTENEDOR GENERAL */
+.detalle-anuncio-container {
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* TARJETA */
+.detalle-anuncio-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  max-width: 1000px;
+  width: 100%;
+  padding: 35px;
+  display: flex;
+  gap: 35px;
+  align-items: flex-start;
+}
+
+/* IMAGEN */
+.detalle-anuncio-img {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  border: 4px solid #fff;
+}
+
+/* INFORMACIÓN */
+.detalle-anuncio-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* TÍTULO */
+.detalle-anuncio-titulo {
+  font-size: 2.4rem;
+  color: #ff7a26;
+  margin: 0;
+}
+
+/* FECHA */
+.detalle-anuncio-fecha {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* TIPO */
+.detalle-anuncio-tipo {
+  display: inline-block;
+  background: #d9eaff;
+  color: #1a73e8;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* CONTENIDO */
+.detalle-anuncio-contenido p {
+  background: #fafafa;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* BOTÓN VOLVER */
+.btn-volver {
+  padding: 12px 20px;
+  background: white;
+  border: 2px solid #ff914d;
+  color: #ff7a26;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  width: fit-content;
+}
+
+.btn-volver:hover {
+  background: #ffe1cc;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .detalle-anuncio-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detalle-anuncio-img {
+    width: 100%;
+    height: auto;
+  }
+}

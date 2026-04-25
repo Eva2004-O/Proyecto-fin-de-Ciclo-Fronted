@@ -20,6 +20,8 @@ import Colabora from "./Components/Colabora/Colabora";
 import Table_Articulos from "./Components/Merchandising/Table_Articulos";
 import Gestion_Articulos from "./Components/Merchandising/Gestion_articulos";
 import Formulario_Articulos from "./Components/Merchandising/Formulario_Articulos";
+import List_Anuncios, { lista_eventos } from "./Components/Anuncios/List_Anuncios";
+import Anuncios_Card_Details from "./Components/Anuncios/Anuncios_Card_Details";
 
 function App() {
     return (
@@ -91,6 +93,8 @@ function App() {
       <Route path="/administracion/merchandising" element={<Gestion_Articulos></Gestion_Articulos>}></Route>
       <Route path="/administracion/merchandising/formulario" element={<Formulario_Articulos></Formulario_Articulos>}></Route>
       <Route path="/administracion/merchandising/formulario/:id" element={<Formulario_Articulos></Formulario_Articulos>}></Route>
+      <Route path="/anuncios" element={<List_Anuncios></List_Anuncios>}></Route>
+      <Route path="/anuncios/:id" element={<Anuncios_Card_Details></Anuncios_Card_Details>}></Route>
       <Route path="*" element={<NotFount />} />
       
     </Routes>
