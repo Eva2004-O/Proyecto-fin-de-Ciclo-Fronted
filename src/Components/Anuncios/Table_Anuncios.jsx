@@ -1,45 +1,47 @@
-  import './Table_Articulos.css';
+  import './Table_Anuncios.css';
   import { Link, } from "react-router-dom";
-function Table_Articulos({articulos, onEliminar}){
+
+function Table_Anuncios({anuncios, onEliminar}){
 
      return (
-    <div className="tabla-articulos-container">
+    <div className="tabla-anuncios-container">
 
       <div className="btn-nuevo-container">
-  <Link to="/administracion/merchandising/formulario" >
+  <Link to="/administracion/anuncios/formulario" >
   <button className="btn-nuevo">➕ Añadir Articulo</button>
     
   </Link>
 </div>
 
 
-      <table className="tabla-articulos">
+      <table className="tabla-anuncios">
         <thead>
           <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Stock</th>
+            <th>Titular</th>
+            <th>Tipo</th>
+            <th>Fecha Evento</th>
+            <th>Participantes</th>
             <th>Acciones</th>
           </tr>
         </thead>
 
         <tbody>
-          {articulos.map((articulo) => (
-            <tr key={articulo.id}>
-              <td>{articulo.id}</td>
-              <td>{articulo.nombre}</td>
-              <td>{articulo.precio}€</td>
-              <td>{articulo.stock}</td>
-
+          {anuncios.map((anuncio) => (
+            <tr key={anuncio.id}>
+              <td>{anuncio.id}</td>
+              <td>{anuncio.titulo}</td>
+              <td>{anuncio.tipo}</td>
+              <td>{anuncio.fecha}</td>
+              <td>{(anuncio.participantesActuales ?? 0)}/{(anuncio.participantesTotales ?? anuncio.participantes ?? 0)}</td>
               
               <td className="acciones">
-                <Link to={`/articulos/${articulo.id}`}>
+                <Link to={`/anuncios/${anuncio.id}`}>
                 <button className="btn-ver">
                   👁 Ver
                 </button>
                 </Link>
-                <Link to={`/administracion/merchandising/formulario/${articulo.id}`}>
+                <Link to={`/administracion/anuncios/formulario/${anuncio.id}`}>
                 <button  className="btn-editar">✏ Editar</button>
                     
               </Link>
@@ -59,4 +61,4 @@ function Table_Articulos({articulos, onEliminar}){
 
 }
 
-export default Table_Articulos;
+export default Table_Anuncios;

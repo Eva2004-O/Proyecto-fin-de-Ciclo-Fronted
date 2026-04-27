@@ -23,6 +23,8 @@ import Formulario_Articulos from "./Components/Merchandising/Formulario_Articulo
 import List_Anuncios, { lista_eventos } from "./Components/Anuncios/List_Anuncios";
 import Anuncios_Card_Details from "./Components/Anuncios/Anuncios_Card_Details";
 import Contrato_Acogida from "./Components/Animals/Contrato_Acogida";
+import Gestion_Anuncios from "./Components/Anuncios/Gestion_Anuncios";
+import Formulario_Anuncios from "./Components/Anuncios/Formulario_Anuncios";
 
 function App() {
     return (
@@ -98,6 +100,9 @@ function App() {
       <Route path="/anuncios/:id" element={<Anuncios_Card_Details></Anuncios_Card_Details>}></Route>
       <Route path="/contrato/adopcion" element={<Contrato_Adopcion></Contrato_Adopcion>}></Route>
       <Route path="/contrato/acogida" element={<Contrato_Acogida></Contrato_Acogida>}></Route>
+      <Route path="/administracion/anuncios" element={<Gestion_Anuncios></Gestion_Anuncios>}></Route>
+      <Route path="/administracion/anuncios/formulario" element={<Formulario_Anuncios></Formulario_Anuncios>}></Route>
+      <Route path="/administracion/anuncios/formulario/:id" element={<Formulario_Anuncios></Formulario_Anuncios>}></Route>
       <Route path="*" element={<NotFount />} />
       
     </Routes>
