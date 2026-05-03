@@ -25,6 +25,10 @@ import Anuncios_Card_Details from "./Components/Anuncios/Anuncios_Card_Details";
 import Contrato_Acogida from "./Components/Animals/Contrato_Acogida";
 import Gestion_Anuncios from "./Components/Anuncios/Gestion_Anuncios";
 import Formulario_Anuncios from "./Components/Anuncios/Formulario_Anuncios";
+import Formulario_Socio from "./Components/Colabora/Formulario_Socio";
+import Formulario_Donaciones from "./Components/Colabora/Formulario_Donaciones";
+import Formulario_Voluntariado from "./Components/Colabora/Formulario_Voluntariado";
+import Formulario_Apadrinar from "./Components/Colabora/Formulario_Apadrinar";
 
 function App() {
     return (
@@ -66,7 +70,7 @@ function App() {
         <Link to="/administracion/socios">Socios</Link>
         <Link to="/administracion/apadrinar">Padrinos/madrinas</Link>
         <Link to="/administracion/voluntarios">Voluntarios</Link>
-        <Link to="/administracion/donacciones">Donaciones</Link>
+        <Link to="/administracion/donaciones">Donaciones</Link>
       </div>
     </div>
     <Link to="/perfil">Perfil</Link>
@@ -103,6 +107,11 @@ function App() {
       <Route path="/administracion/anuncios" element={<Gestion_Anuncios></Gestion_Anuncios>}></Route>
       <Route path="/administracion/anuncios/formulario" element={<Formulario_Anuncios></Formulario_Anuncios>}></Route>
       <Route path="/administracion/anuncios/formulario/:id" element={<Formulario_Anuncios></Formulario_Anuncios>}></Route>
+      <Route path="/colabora/socio" element={<Formulario_Socio></Formulario_Socio>}></Route>
+      <Route path="/colabora/donaciones" element={<Formulario_Donaciones></Formulario_Donaciones>}></Route>
+      <Route path="/colabora/voluntariado" element={<Formulario_Voluntariado></Formulario_Voluntariado>}></Route>
+      <Route path="/colabora/apadrinar" element={<Formulario_Apadrinar></Formulario_Apadrinar>}></Route>
+      <Route path="/colabora/apadrinar/:id" element={<Formulario_Apadrinar></Formulario_Apadrinar>}></Route>
       <Route path="*" element={<NotFount />} />
       
     </Routes>

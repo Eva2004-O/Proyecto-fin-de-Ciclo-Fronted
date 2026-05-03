@@ -31,7 +31,7 @@ function Anuncios_Card_Details(){
           </div>
 
           <button className="btn-volver" onClick={() => navigate(-1)}>
-            ← Volver
+           Volver
           </button>
 
         </div>

@@ -32,17 +32,34 @@ function Card_Animal_Details({animales}) {
         <p><strong>Fecha Entrada:</strong> {animal.fecha_alta}</p>
       </div>
 
-      <div className="detalle-historia">
-        <h2>Su historia</h2>
-        <p>{animal.historia}</p>
-      </div>
+<div className="detalle-botones">
+  <button
+    type="button"
+    className="btn-detalle btn-volver-animales"
+    onClick={() => navigate(-1)}
+  >
+    Volver
+  </button>
 
-      <div className="detalle-botones">
-        <button type="button" className="btn-volver" onClick={() => navigate(-1)}>Volver</button>
-        <Link to={`/animales/formulario/adopcion/${id}`}>
-          <button className="btn-adoptar">Preguntar</button>
-        </Link>
-      </div>
+  <button
+    type="button"
+    className="btn-detalle btn-adoptar"
+    onClick={() => navigate(`/animales/formulario/adopcion/${id}`)}
+  >
+    Preguntar
+  </button>
+
+  <button
+    type="button"
+    className="btn-detalle btn-apadrinar"
+    onClick={() => navigate(`/colabora/apadrinar/${id}`)}
+  >
+    Apadrinar
+  </button>
+
+</div>
+
+
 
     </div>
   </div>

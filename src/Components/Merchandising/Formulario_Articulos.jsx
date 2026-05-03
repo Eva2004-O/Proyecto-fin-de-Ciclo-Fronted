@@ -101,7 +101,6 @@ useEffect(() => {
             <button type="reset" className="btn-reset">Reset</button>
             <button type="button" className="btn-cancelar" onClick={() => navigate(-1)}>Cancelar</button>
           </div>
-
         </form>
       </div>
     </div>

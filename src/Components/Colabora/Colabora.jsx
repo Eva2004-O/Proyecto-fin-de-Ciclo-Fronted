@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Colabora.css';
 
 function Colabora(){
@@ -22,7 +23,8 @@ function Colabora(){
         Con una pequeña aportación mensual ayudas a cubrir alimentación, cuidados veterinarios
         y mejoras en nuestras instalaciones. <br></br>(Duración 3 meses)
       </p>
-      <button className="colabora-btn">Más información</button>
+      <Link to="/colabora/socio">
+      <button className="colabora-btn">Más información</button></Link>
     </div>
 
     {/* APADRINA */}
@@ -33,7 +35,8 @@ function Colabora(){
         Si no puedes adoptar, apadrinar es la mejor forma de apoyar a un animal concreto
         y seguir de cerca su evolución. <br></br>(Duración 1 año)
       </p>
-      <button className="colabora-btn">Apadrinar</button>
+      <Link to="/colabora/apadrinar">
+      <button className="colabora-btn">Apadrinar</button></Link>
     </div>
 
     {/* DONACIONES */}
@@ -44,7 +47,8 @@ function Colabora(){
         Cada donación se destina a alimentación, medicinas, rescates urgentes y cuidados
         esenciales para nuestros animales.
       </p>
-      <button className="colabora-btn">Donar</button>
+      <Link to="/colabora/donaciones">
+      <button className="colabora-btn">Donar</button></Link>
     </div>
 
     {/* VOLUNTARIADO */}
@@ -55,7 +59,8 @@ function Colabora(){
         Paseos, limpieza, eventos, difusión… Tu tiempo y cariño pueden marcar la diferencia
         en su bienestar diario.
       </p>
-      <button className="colabora-btn">Unirme</button>
+      <Link to="/colabora/voluntariado">
+      <button className="colabora-btn">Unirme</button></Link>
     </div>
 
   </div>
