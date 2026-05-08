@@ -29,6 +29,8 @@ import Formulario_Socio from "./Components/Colabora/Formulario_Socio";
 import Formulario_Donaciones from "./Components/Colabora/Formulario_Donaciones";
 import Formulario_Voluntariado from "./Components/Colabora/Formulario_Voluntariado";
 import Formulario_Apadrinar from "./Components/Colabora/Formulario_Apadrinar";
+import Gestion_Donaciones from "./Components/Colabora/Gestion_Donaciones";
+import Donacion_Detalle from "./Components/Colabora/Donacion_Detalle";
 
 function App() {
     return (
@@ -112,6 +114,8 @@ function App() {
       <Route path="/colabora/voluntariado" element={<Formulario_Voluntariado></Formulario_Voluntariado>}></Route>
       <Route path="/colabora/apadrinar" element={<Formulario_Apadrinar></Formulario_Apadrinar>}></Route>
       <Route path="/colabora/apadrinar/:id" element={<Formulario_Apadrinar></Formulario_Apadrinar>}></Route>
+      <Route path="/administracion/donaciones" element={<Gestion_Donaciones></Gestion_Donaciones>}></Route>
+      <Route path="/administracion/donaciones/:id" element={<Donacion_Detalle></Donacion_Detalle>}></Route>
       <Route path="*" element={<NotFount />} />
       
     </Routes>
