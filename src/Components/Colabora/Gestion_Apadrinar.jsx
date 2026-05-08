@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Table_Donaciones from "./Table_Donaciones";
-import './Gestion_Donaciones.css';
+import './Gestion_Apadrinar.css';
+import Table_Apadrinar from "./Table_Apadrinar";
 
 export const lista_apadrinamientos = [
   {
-    id: "A-001",
+    id: "1",
     nombre: "Laura Fernández",
     email: "laura.fernandez@example.com",
     telefono: "612345678",
@@ -14,7 +14,7 @@ export const lista_apadrinamientos = [
     estado: "activo"
   },
   {
-    id: "A-002",
+    id: "2",
     nombre: "Marcos Varela",
     email: "marcos.varela@example.com",
     telefono: "698112233",
@@ -24,7 +24,7 @@ export const lista_apadrinamientos = [
     estado: "activo"
   },
   {
-    id: "A-003",
+    id: "3",
     nombre: "Ana Souto",
     email: "ana.souto@example.com",
     telefono: "622334455",
@@ -34,7 +34,7 @@ export const lista_apadrinamientos = [
     estado: "pendiente"
   },
   {
-    id: "A-004",
+    id: "4",
     nombre: "Diego Castro",
     email: "diego.castro@example.com",
     telefono: "677889900",
@@ -44,7 +44,7 @@ export const lista_apadrinamientos = [
     estado: "activo"
   },
   {
-    id: "A-005",
+    id: "5",
     nombre: "Sara Iglesias",
     email: "sara.iglesias@example.com",
     telefono: "699887766",
@@ -83,7 +83,7 @@ function Gestion_Apadrinar(){
     <div className="gestion-padrino-container">
         <div className="contenedor-principal">
       <Table_Apadrinar
-        donaciones={padrinosPaginados}
+        padrinos={padrinosPaginados}
       />
       
    
@@ -104,4 +104,4 @@ function Gestion_Apadrinar(){
 )
 }
 
-export default Gestion_Donaciones;
+export default Gestion_Apadrinar;
