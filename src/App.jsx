@@ -33,6 +33,8 @@ import Gestion_Donaciones from "./Components/Colabora/Gestion_Donaciones";
 import Donacion_Detalle from "./Components/Colabora/Donacion_Detalle";
 import Gestion_Apadrinar from "./Components/Colabora/Gestion_Apadrinar";
 import Apadrinar_Detalle from "./Components/Colabora/Apadrinar_Detalle";
+import Gestion_Voluntariado from "./Components/Colabora/Gestion_Voluntariado";
+import Voluntariado_Detalle from "./Components/Colabora/Voluntariado_Detalle";
 
 function App() {
     return (
@@ -120,6 +122,8 @@ function App() {
       <Route path="/administracion/donaciones/:id" element={<Donacion_Detalle></Donacion_Detalle>}></Route>
       <Route path="/administracion/apadrinar" element={<Gestion_Apadrinar></Gestion_Apadrinar>}></Route>
       <Route path="/administracion/apadrinar/:id" element={<Apadrinar_Detalle></Apadrinar_Detalle>}></Route>
+      <Route path="/administracion/voluntarios" element={<Gestion_Voluntariado></Gestion_Voluntariado>}></Route>
+      <Route path="/administracion/voluntarios/:id" element={<Voluntariado_Detalle></Voluntariado_Detalle>}></Route>
       <Route path="*" element={<NotFount />} />
       
     </Routes>
