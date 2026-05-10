@@ -1,0 +1,88 @@
+.tabla-participantes-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.tabla-participantes {
+  width: 100%;
+  max-width: 1100px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* CABECERA */
+.tabla-participantes thead tr {
+  background: #ff7a26;
+  color: white;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tabla-participantes th {
+  padding: 14px 18px;
+  font-size: 1rem;
+}
+
+/* FILAS */
+.tabla-participantes td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+/* HOVER */
+.tabla-participantes tbody tr:hover {
+  background: #fff3e8;
+}
+
+/* BOTONES */
+.acciones {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-ver,
+.btn-editar,
+.btn-eliminar,
+.btn-participantes {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+/* Colores de botones */
+.btn-ver {
+  background: #4da3ff;
+  color: white;
+}
+
+.btn-editar {
+  background: #ffc107;
+  color: #5a4500;
+}
+
+.btn-eliminar {
+  background: #ff4d4d;
+  color: white;
+}
+
+.btn-participantes {
+  background: #6c63ff;
+  color: white;
+}
+
+/* Hover botones */
+.btn-ver:hover,
+.btn-editar:hover,
+.btn-eliminar:hover,
+.btn-participantes:hover {
+  opacity: 0.85;
+}

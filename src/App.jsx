@@ -35,6 +35,9 @@ import Gestion_Apadrinar from "./Components/Colabora/Gestion_Apadrinar";
 import Apadrinar_Detalle from "./Components/Colabora/Apadrinar_Detalle";
 import Gestion_Voluntariado from "./Components/Colabora/Gestion_Voluntariado";
 import Voluntariado_Detalle from "./Components/Colabora/Voluntariado_Detalle";
+import Gestion_Socios from "./Components/Colabora/Gestion_Socios";
+import Socio_Detalle from "./Components/Colabora/Socio_Detalle";
+import Participantes_Evento from "./Components/Anuncios/Participantes_Evento";
 
 function App() {
     return (
@@ -124,6 +127,9 @@ function App() {
       <Route path="/administracion/apadrinar/:id" element={<Apadrinar_Detalle></Apadrinar_Detalle>}></Route>
       <Route path="/administracion/voluntarios" element={<Gestion_Voluntariado></Gestion_Voluntariado>}></Route>
       <Route path="/administracion/voluntarios/:id" element={<Voluntariado_Detalle></Voluntariado_Detalle>}></Route>
+      <Route path="/administracion/socios" element={<Gestion_Socios></Gestion_Socios>}></Route>
+      <Route path="/administracion/socios/:id" element={<Socio_Detalle></Socio_Detalle>}></Route>
+      <Route path="/administracion/anuncios/participantes/:id" element={<Participantes_Evento></Participantes_Evento>}></Route>
       <Route path="*" element={<NotFount />} />
       
     </Routes>

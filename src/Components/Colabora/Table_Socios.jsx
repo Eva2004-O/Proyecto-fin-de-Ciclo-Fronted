@@ -1,34 +1,34 @@
-import "./Table_Voluntariado.css";
+import "./Table_Socios.css";
 import { Link } from "react-router-dom";
 
-function Table_Voluntariado({ voluntarios, onEliminar }) {
+function Table_Socios({ socios, onEliminar }) {
   return (
-    <div className="tabla-voluntarios-container">
-      <table className="tabla-voluntarios">
+    <div className="tabla-socios-container">
+      <table className="tabla-socios">
         <thead>
           <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Email</th>
             <th>Teléfono</th>
-            <th>Ciudad</th>
-            <th>Disponibilidad</th>
+            <th>Cuota</th>
+            <th>Periodicidad</th>
             <th>Acciones</th>
           </tr>
         </thead>
 
         <tbody>
-          {voluntarios.map((v) => (
-            <tr key={v.id}>
-              <td>{v.id}</td>
-              <td>{v.nombre}</td>
-              <td>{v.email}</td>
-              <td>{v.telefono}</td>
-              <td>{v.ciudad}</td>
-              <td>{v.disponibilidad}</td>
+          {socios.map((s) => (
+            <tr key={s.id}>
+              <td>{s.id}</td>
+              <td>{s.nombre}</td>
+              <td>{s.email}</td>
+              <td>{s.telefono}</td>
+              <td>{s.cuota}€</td>
+              <td>{s.periodicidad}</td>
 
               <td className="acciones">
-                <Link to={`/administracion/voluntarios/${v.id}`}>
+                <Link to={`/administracion/socios/${s.id}`}>
                   <button className="btn-ver">👁 Ver</button>
                 </Link>
                 <button onClick={() => onEliminar(animal.id)} className="btn-eliminar">
@@ -43,4 +43,4 @@ function Table_Voluntariado({ voluntarios, onEliminar }) {
   );
 }
 
-export default Table_Voluntariado;
+export default Table_Socios;

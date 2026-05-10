@@ -50,6 +50,10 @@ function Table_Anuncios({anuncios, onEliminar}){
                 <button onClick={() => onEliminar(articulo.id)} className="btn-eliminar">
                   🗑 Eliminar
                 </button>
+                <Link to={`/administracion/anuncios/participantes/${anuncio.id}`}>
+                <button  className="btn-ver">Participantes</button>
+                    
+              </Link>
               </td>
             </tr>
           ))}

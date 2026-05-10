@@ -67,6 +67,21 @@ function Gestion_Donaciones(){
   const handleFilterChange = (newFilters) => {
         setFiltros(newFilters)
     }
+  const [donacionAEliminar, setDonacionAEliminar] = useState(null);
+
+const handleEliminar = (id) => {
+  const donacion = donaciones.find(a => a.id === id);
+  setDonacionAEliminar(donacion); // Abre modal
+};
+
+const confirmarEliminar = () => {
+  setDonaciones(donaciones.filter(a => a.id !== donacionAEliminar.id));
+  setDonacionAEliminar(null);
+};
+
+const cancelarEliminar = () => {
+  setDonacionAEliminar(null);
+};
 
 
    
@@ -87,6 +102,7 @@ function Gestion_Donaciones(){
         <div className="contenedor-principal">
       <Table_Donaciones
         donaciones={donacionesPaginados}
+        onEliminar={handleEliminar}
       />
       
    
@@ -102,6 +118,28 @@ function Gestion_Donaciones(){
     </button>
   ))}
 </div>
+ {donacionAEliminar && (
+  <div className="modal-eliminar">
+    <div className="modal-contenido">
+
+      <div className="modal-icono">
+        ⚠️
+      </div>
+
+      <h3>¿Eliminar a {donacionAEliminar.nombre}?</h3>
+      <div className="modal-botones">
+        <button className="btn-eliminar-modal" onClick={confirmarEliminar}>
+          🗑 Eliminar
+        </button>
+
+        <button className="btn-cancelar-modal" onClick={cancelarEliminar}>
+          Cancelar
+        </button>
+      </div>
+
+    </div>
+  </div>
+)}
 </div>
 </div>
 )

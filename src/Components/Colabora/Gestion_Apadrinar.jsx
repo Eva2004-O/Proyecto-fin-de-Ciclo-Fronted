@@ -64,6 +64,21 @@ function Gestion_Apadrinar(){
   const handleFilterChange = (newFilters) => {
         setFiltros(newFilters)
     }
+  const [padrinoAEliminar, setPadrinoAEliminar] = useState(null);
+
+const handleEliminar = (id) => {
+  const padrino = padrinos.find(a => a.id === id);
+  setPadrinoAEliminar(padrino); // Abre modal
+};
+
+const confirmarEliminar = () => {
+  setPadrinos(padrinos.filter(a => a.id !== padrinoAEliminar.id));
+  setPadrinoAEliminar(null);
+};
+
+const cancelarEliminar = () => {
+  setPadrinoAEliminar(null);
+};
 
 
    
@@ -84,6 +99,7 @@ function Gestion_Apadrinar(){
         <div className="contenedor-principal">
       <Table_Apadrinar
         padrinos={padrinosPaginados}
+        onEliminar={handleEliminar}
       />
       
    
@@ -98,7 +114,29 @@ function Gestion_Apadrinar(){
       {i + 1}
     </button>
   ))}
-</div>
+  </div>
+ {padrinoAEliminar && (
+  <div className="modal-eliminar">
+    <div className="modal-contenido">
+
+      <div className="modal-icono">
+        ⚠️
+      </div>
+
+      <h3>¿Eliminar a {padrinoAEliminar.nombre}?</h3>
+      <div className="modal-botones">
+        <button className="btn-eliminar-modal" onClick={confirmarEliminar}>
+          🗑 Eliminar
+        </button>
+
+        <button className="btn-cancelar-modal" onClick={cancelarEliminar}>
+          Cancelar
+        </button>
+      </div>
+
+    </div>
+  </div>
+)}
 </div>
 </div>
 )

@@ -1,6 +1,6 @@
 import './Table_Donaciones.css';
   import { Link, } from "react-router-dom";
-function Table_Donaciones({donaciones}){
+function Table_Donaciones({donaciones, onEliminar}){
 
      return (
     <div className="tabla-donaciones-container">
@@ -34,6 +34,9 @@ function Table_Donaciones({donaciones}){
                   👁 Ver
                 </button>
                 </Link>
+                <button onClick={() => onEliminar(animal.id)} className="btn-eliminar">
+                  🗑 Eliminar
+                </button>
               </td>
             </tr>
           ))}

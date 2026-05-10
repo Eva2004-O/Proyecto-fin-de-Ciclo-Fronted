@@ -1,17 +1,16 @@
 import { useState } from "react";
-import Table_Voluntariado from "./Table_Voluntariado";
-import "./Gestion_Voluntariado.css";
-export const lista_voluntariado = [
+import Table_Socios from "./Table_Socios";
+import "./Gestion_Socios.css";
+export const lista_socios = [
   {
     id: "1",
     nombre: "Laura Fernández",
     email: "laura.fernandez@example.com",
     telefono: "612345678",
-    ciudad: "Vigo",
-    disponibilidad: "mañanas",
-    areas: ["paseos", "eventos"],
-    experiencia: "He trabajado con animales rescatados.",
-    comentarios: "Puedo ayudar más en verano.",
+    cuota: 10,
+    periodicidad: "mensual",
+    metodoPago: "tarjeta",
+    comentarios: "Quiero recibir noticias mensuales.",
     fecha: "2026-05-01"
   },
   {
@@ -19,10 +18,9 @@ export const lista_voluntariado = [
     nombre: "Marcos Varela",
     email: "marcos.varela@example.com",
     telefono: "698112233",
-    ciudad: "Pontevedra",
-    disponibilidad: "fines de semana",
-    areas: ["limpieza"],
-    experiencia: "",
+    cuota: 5,
+    periodicidad: "mensual",
+    metodoPago: "paypal",
     comentarios: "",
     fecha: "2026-04-28"
   },
@@ -31,11 +29,10 @@ export const lista_voluntariado = [
     nombre: "Ana Souto",
     email: "ana.souto@example.com",
     telefono: "622334455",
-    ciudad: "Ourense",
-    disponibilidad: "tardes",
-    areas: ["redes", "eventos"],
-    experiencia: "Gestión de redes sociales.",
-    comentarios: "Puedo ayudar en campañas.",
+    cuota: 20,
+    periodicidad: "trimestral",
+    metodoPago: "transferencia",
+    comentarios: "Quiero apoyar casos especiales.",
     fecha: "2026-04-20"
   },
   {
@@ -43,11 +40,10 @@ export const lista_voluntariado = [
     nombre: "Diego Castro",
     email: "diego.castro@example.com",
     telefono: "677889900",
-    ciudad: "Vigo",
-    disponibilidad: "total",
-    areas: ["paseos", "traslados"],
-    experiencia: "",
-    comentarios: "Tengo coche propio.",
+    cuota: 15,
+    periodicidad: "mensual",
+    metodoPago: "tarjeta",
+    comentarios: "",
     fecha: "2026-04-15"
   },
   {
@@ -55,52 +51,51 @@ export const lista_voluntariado = [
     nombre: "Sara Iglesias",
     email: "sara.iglesias@example.com",
     telefono: "699887766",
-    ciudad: "A Coruña",
-    disponibilidad: "mañanas",
-    areas: ["limpieza"],
-    experiencia: "",
-    comentarios: "",
+    cuota: 8,
+    periodicidad: "mensual",
+    metodoPago: "paypal",
+    comentarios: "Me gustaría recibir fotos de los animales.",
     fecha: "2026-04-10"
   }
 ];
 
 
-function Gestion_Voluntariado() {
-  const [voluntarios, setVoluntarios] = useState(lista_voluntariado);
+function Gestion_Socios() {
+  const [socios, setSocios] = useState(lista_socios);
   const [paginaActual, setPaginaActual] = useState(1);
-  const voluntariosPorPagina = 9;
+  const sociosPorPagina = 9;
 
-    const [voluntarioAEliminar, setVoluntarioAEliminar] = useState(null);
+    const [socioAEliminar, setSocioAEliminar] = useState(null);
 
 const handleEliminar = (id) => {
-  const voluntario = voluntarios.find(a => a.id === id);
-  setVoluntarioAEliminar(voluntario); // Abre modal
+  const socio = socios.find(a => a.id === id);
+  setAnimalAEliminar(socio); // Abre modal
 };
 
 const confirmarEliminar = () => {
-  setAnimales(voluntarios.filter(a => a.id !== voluntarioAEliminar.id));
-  setVoluntarioAEliminar(null);
+  setSocios(socios.filter(a => a.id !== socioAEliminar.id));
+  setSocioAEliminar(null);
 };
 
 const cancelarEliminar = () => {
-  setVoluntarioAEliminar(null);
+  setSocioAEliminar(null);
 };
 
 
-  const indexUltimo = paginaActual * voluntariosPorPagina;
-  const indexPrimero = indexUltimo - voluntariosPorPagina;
-  const voluntariosPaginados = voluntarios.slice(indexPrimero, indexUltimo);
+  const indexUltimo = paginaActual * sociosPorPagina;
+  const indexPrimero = indexUltimo - sociosPorPagina;
+  const sociosPaginados = socios.slice(indexPrimero, indexUltimo);
 
-  const totalPaginas = Math.ceil(voluntarios.length / voluntariosPorPagina);
+  const totalPaginas = Math.ceil(socios.length / sociosPorPagina);
 
   const cambiarPagina = (numero) => {
     setPaginaActual(numero);
   };
 
   return (
-    <div className="gestion-voluntariado-container">
+    <div className="gestion-socios-container">
       <div className="contenedor-principal">
-        <Table_Voluntariado voluntarios={voluntariosPaginados} onEliminar={handleEliminar}/>
+        <Table_Socios socios={sociosPaginados} onEliminar={handleEliminar}/>
 
         <div className="paginacion">
           {Array.from({ length: totalPaginas }, (_, i) => (
@@ -113,7 +108,7 @@ const cancelarEliminar = () => {
             </button>
           ))}
         </div>
- {voluntarioAEliminar && (
+ {socioAEliminar && (
   <div className="modal-eliminar">
     <div className="modal-contenido">
 
@@ -121,7 +116,7 @@ const cancelarEliminar = () => {
         ⚠️
       </div>
 
-      <h3>¿Eliminar a {voluntarioAEliminar.nombre}?</h3>
+      <h3>¿Eliminar a {socioAEliminar.nombre}?</h3>
       <div className="modal-botones">
         <button className="btn-eliminar-modal" onClick={confirmarEliminar}>
           🗑 Eliminar
@@ -140,4 +135,4 @@ const cancelarEliminar = () => {
   );
 }
 
-export default Gestion_Voluntariado;
+export default Gestion_Socios;

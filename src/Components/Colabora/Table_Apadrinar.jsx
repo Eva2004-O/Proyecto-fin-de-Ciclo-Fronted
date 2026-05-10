@@ -2,7 +2,7 @@ import './Table_Apadrinar.css';
 import { Link } from "react-router-dom";
 import { listAnimales } from '../Animals/List_Animal';
 
-function Table_Apadrinar({ padrinos }) {
+function Table_Apadrinar({ padrinos, onEliminar }) {
 
   // Función para obtener el nombre del animal
   const getAnimalName = (id) => {
@@ -40,6 +40,9 @@ function Table_Apadrinar({ padrinos }) {
                 <Link to={`/administracion/apadrinar/${padrino.id}`}>
                   <button className="btn-ver">👁 Ver</button>
                 </Link>
+                <button onClick={() => onEliminar(animal.id)} className="btn-eliminar">
+                  🗑 Eliminar
+                </button>
               </td>
             </tr>
           ))}

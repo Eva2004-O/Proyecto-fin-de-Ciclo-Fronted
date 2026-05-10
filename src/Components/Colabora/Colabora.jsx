@@ -21,7 +21,7 @@ function Colabora(){
       <h2>Hazte Socio/a</h2>
       <p>
         Con una pequeña aportación mensual ayudas a cubrir alimentación, cuidados veterinarios
-        y mejoras en nuestras instalaciones. <br></br>(Duración 3 meses)
+        y mejoras en nuestras instalaciones.
       </p>
       <Link to="/colabora/socio">
       <button className="colabora-btn">Más información</button></Link>
@@ -33,7 +33,7 @@ function Colabora(){
       <h2>Apadrina</h2>
       <p>
         Si no puedes adoptar, apadrinar es la mejor forma de apoyar a un animal concreto
-        y seguir de cerca su evolución. <br></br>(Duración 1 año)
+        y seguir de cerca su evolución.
       </p>
       <Link to="/colabora/apadrinar">
       <button className="colabora-btn">Apadrinar</button></Link>
