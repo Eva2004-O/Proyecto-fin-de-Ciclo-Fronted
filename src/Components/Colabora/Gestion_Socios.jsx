@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Table_Socios from "./Table_Socios";
 import "./Gestion_Socios.css";
+import Filter_Colaborar from "./Filter_Colaborar";
 export const lista_socios = [
   {
     id: "1",
@@ -61,42 +62,65 @@ export const lista_socios = [
 
 
 function Gestion_Socios() {
+
   const [socios, setSocios] = useState(lista_socios);
+  const [filtros, setFiltros] = useState({ nombre: "", correo: "" });
   const [paginaActual, setPaginaActual] = useState(1);
   const sociosPorPagina = 9;
 
-    const [socioAEliminar, setSocioAEliminar] = useState(null);
+  const handleFilterChange = (newFilters) => {
+    setFiltros(newFilters);
+    setPaginaActual(1); // Reiniciar paginación al filtrar
+  };
 
-const handleEliminar = (id) => {
-  const socio = socios.find(a => a.id === id);
-  setAnimalAEliminar(socio); // Abre modal
-};
+  // --- FILTRADO ---
+  const sociosFiltrados = socios.filter((s) => {
+    const coincideNombre = s.nombre.toLowerCase().includes(filtros.nombre.toLowerCase());
+    const coincideCorreo = s.email.toLowerCase().includes(filtros.correo.toLowerCase());
+    
 
-const confirmarEliminar = () => {
-  setSocios(socios.filter(a => a.id !== socioAEliminar.id));
-  setSocioAEliminar(null);
-};
+    return coincideNombre && coincideCorreo;
+  });
 
-const cancelarEliminar = () => {
-  setSocioAEliminar(null);
-};
-
-
+  // --- PAGINACIÓN ---
   const indexUltimo = paginaActual * sociosPorPagina;
   const indexPrimero = indexUltimo - sociosPorPagina;
-  const sociosPaginados = socios.slice(indexPrimero, indexUltimo);
+  const sociosPaginados = sociosFiltrados.slice(indexPrimero, indexUltimo);
 
-  const totalPaginas = Math.ceil(socios.length / sociosPorPagina);
+  const totalPaginas = Math.ceil(sociosFiltrados.length / sociosPorPagina);
 
   const cambiarPagina = (numero) => {
     setPaginaActual(numero);
   };
 
+  // --- MODAL ELIMINAR ---
+  const [socioAEliminar, setSocioAEliminar] = useState(null);
+
+  const handleEliminar = (id) => {
+    const socio = socios.find(a => a.id === id);
+    setSocioAEliminar(socio); // corregido
+  };
+
+  const confirmarEliminar = () => {
+    setSocios(socios.filter(a => a.id !== socioAEliminar.id));
+    setSocioAEliminar(null);
+  };
+
+  const cancelarEliminar = () => {
+    setSocioAEliminar(null);
+  };
+
   return (
     <div className="gestion-socios-container">
       <div className="contenedor-principal">
-        <Table_Socios socios={sociosPaginados} onEliminar={handleEliminar}/>
 
+        {/* 🔶 FILTRO GLOBAL */}
+        <Filter_Colaborar onFilterChange={handleFilterChange} />
+
+        {/* TABLA */}
+        <Table_Socios socios={sociosPaginados} onEliminar={handleEliminar} />
+
+        {/* PAGINACIÓN */}
         <div className="paginacion">
           {Array.from({ length: totalPaginas }, (_, i) => (
             <button
@@ -108,28 +132,30 @@ const cancelarEliminar = () => {
             </button>
           ))}
         </div>
- {socioAEliminar && (
-  <div className="modal-eliminar">
-    <div className="modal-contenido">
 
-      <div className="modal-icono">
-        ⚠️
-      </div>
+        {/* MODAL */}
+        {socioAEliminar && (
+          <div className="modal-eliminar">
+            <div className="modal-contenido">
 
-      <h3>¿Eliminar a {socioAEliminar.nombre}?</h3>
-      <div className="modal-botones">
-        <button className="btn-eliminar-modal" onClick={confirmarEliminar}>
-          🗑 Eliminar
-        </button>
+              <div className="modal-icono">⚠️</div>
 
-        <button className="btn-cancelar-modal" onClick={cancelarEliminar}>
-          Cancelar
-        </button>
-      </div>
+              <h3>¿Eliminar a {socioAEliminar.nombre}?</h3>
 
-    </div>
-  </div>
-)}
+              <div className="modal-botones">
+                <button className="btn-eliminar-modal" onClick={confirmarEliminar}>
+                  🗑 Eliminar
+                </button>
+
+                <button className="btn-cancelar-modal" onClick={cancelarEliminar}>
+                  Cancelar
+                </button>
+              </div>
+
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   );

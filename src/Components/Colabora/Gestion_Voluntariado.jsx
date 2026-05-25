@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Table_Voluntariado from "./Table_Voluntariado";
 import "./Gestion_Voluntariado.css";
+import Filter_Colaborar from "./Filter_Colaborar";
 export const lista_voluntariado = [
   {
     id: "1",
@@ -66,42 +67,68 @@ export const lista_voluntariado = [
 
 
 function Gestion_Voluntariado() {
+
   const [voluntarios, setVoluntarios] = useState(lista_voluntariado);
+  const [filtros, setFiltros] = useState({ nombre: "", correo: "" });
   const [paginaActual, setPaginaActual] = useState(1);
   const voluntariosPorPagina = 9;
 
-    const [voluntarioAEliminar, setVoluntarioAEliminar] = useState(null);
+  const handleFilterChange = (newFilters) => {
+    setFiltros(newFilters);
+    setPaginaActual(1); // Reiniciar paginación al filtrar
+  };
 
-const handleEliminar = (id) => {
-  const voluntario = voluntarios.find(a => a.id === id);
-  setVoluntarioAEliminar(voluntario); // Abre modal
-};
+  // --- FILTRADO ---
+  const voluntariosFiltrados = voluntarios.filter((v) => {
+    const coincideNombre = v.nombre.toLowerCase().includes(filtros.nombre.toLowerCase());
+    const coincideCorreo = v.email.toLowerCase().includes(filtros.correo.toLowerCase());
+    
 
-const confirmarEliminar = () => {
-  setAnimales(voluntarios.filter(a => a.id !== voluntarioAEliminar.id));
-  setVoluntarioAEliminar(null);
-};
+    return coincideNombre && coincideCorreo;
+  });
 
-const cancelarEliminar = () => {
-  setVoluntarioAEliminar(null);
-};
-
-
+  // --- PAGINACIÓN ---
   const indexUltimo = paginaActual * voluntariosPorPagina;
   const indexPrimero = indexUltimo - voluntariosPorPagina;
-  const voluntariosPaginados = voluntarios.slice(indexPrimero, indexUltimo);
+  const voluntariosPaginados = voluntariosFiltrados.slice(indexPrimero, indexUltimo);
 
-  const totalPaginas = Math.ceil(voluntarios.length / voluntariosPorPagina);
+  const totalPaginas = Math.ceil(voluntariosFiltrados.length / voluntariosPorPagina);
 
   const cambiarPagina = (numero) => {
     setPaginaActual(numero);
   };
 
+  // --- MODAL ELIMINAR ---
+  const [voluntarioAEliminar, setVoluntarioAEliminar] = useState(null);
+
+  const handleEliminar = (id) => {
+    const voluntario = voluntarios.find(a => a.id === id);
+    setVoluntarioAEliminar(voluntario);
+  };
+
+  const confirmarEliminar = () => {
+    setVoluntarios(voluntarios.filter(a => a.id !== voluntarioAEliminar.id)); // corregido
+    setVoluntarioAEliminar(null);
+  };
+
+  const cancelarEliminar = () => {
+    setVoluntarioAEliminar(null);
+  };
+
   return (
     <div className="gestion-voluntariado-container">
       <div className="contenedor-principal">
-        <Table_Voluntariado voluntarios={voluntariosPaginados} onEliminar={handleEliminar}/>
 
+        {/* 🔶 FILTRO GLOBAL */}
+        <Filter_Colaborar onFilterChange={handleFilterChange} />
+
+        {/* TABLA */}
+        <Table_Voluntariado
+          voluntarios={voluntariosPaginados}
+          onEliminar={handleEliminar}
+        />
+
+        {/* PAGINACIÓN */}
         <div className="paginacion">
           {Array.from({ length: totalPaginas }, (_, i) => (
             <button
@@ -113,28 +140,30 @@ const cancelarEliminar = () => {
             </button>
           ))}
         </div>
- {voluntarioAEliminar && (
-  <div className="modal-eliminar">
-    <div className="modal-contenido">
 
-      <div className="modal-icono">
-        ⚠️
-      </div>
+        {/* MODAL */}
+        {voluntarioAEliminar && (
+          <div className="modal-eliminar">
+            <div className="modal-contenido">
 
-      <h3>¿Eliminar a {voluntarioAEliminar.nombre}?</h3>
-      <div className="modal-botones">
-        <button className="btn-eliminar-modal" onClick={confirmarEliminar}>
-          🗑 Eliminar
-        </button>
+              <div className="modal-icono">⚠️</div>
 
-        <button className="btn-cancelar-modal" onClick={cancelarEliminar}>
-          Cancelar
-        </button>
-      </div>
+              <h3>¿Eliminar a {voluntarioAEliminar.nombre}?</h3>
 
-    </div>
-  </div>
-)}
+              <div className="modal-botones">
+                <button className="btn-eliminar-modal" onClick={confirmarEliminar}>
+                  🗑 Eliminar
+                </button>
+
+                <button className="btn-cancelar-modal" onClick={cancelarEliminar}>
+                  Cancelar
+                </button>
+              </div>
+
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   );

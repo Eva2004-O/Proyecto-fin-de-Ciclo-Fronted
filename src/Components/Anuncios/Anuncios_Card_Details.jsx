@@ -24,7 +24,7 @@ function Anuncios_Card_Details(){
 
           <span className="detalle-anuncio-fecha">📅 {anuncio.fecha}</span>
 
-          <span className="detalle-anuncio-tipo">Anuncio</span>
+          <span className="detalle-anuncio-tipo">{anuncio.tipo.toUpperCase()}</span>
 
           <div className="detalle-anuncio-contenido">
             <p>{anuncio.contenido}</p>

@@ -1,0 +1,58 @@
+/* CAJA EXTERIOR */
+.filtros-articulos-box {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto 35px auto;
+  padding: 25px 25px;
+  border: 2px solid white;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(255, 122, 38, 0.15);
+}
+
+/* GRID INTERNO DE FILTROS */
+.filtros-articulos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+}
+
+/* CADA FILTRO */
+.filtro-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* LABEL */
+.filtro-item label {
+  font-weight: 700;
+  color: #ff7a26;
+  font-size: 0.95rem;
+}
+
+/* INPUTS Y SELECTS */
+.filtro-item input,
+.filtro-item select {
+  padding: 12px;
+  border: 2px solid #ffb98a;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.filtro-item input:focus,
+.filtro-item select:focus {
+  border-color: #ff7a26;
+  box-shadow: 0 0 6px rgba(255, 122, 38, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .filtros-articulos {
+    grid-template-columns: 1fr;
+  }
+}
+

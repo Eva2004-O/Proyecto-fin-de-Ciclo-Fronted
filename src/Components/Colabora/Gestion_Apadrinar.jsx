@@ -1,6 +1,7 @@
 import { useState } from "react";
 import './Gestion_Apadrinar.css';
 import Table_Apadrinar from "./Table_Apadrinar";
+import Filter_Colaborar from "./Filter_Colaborar";
 
 export const lista_apadrinamientos = [
   {
@@ -57,89 +58,105 @@ export const lista_apadrinamientos = [
 
 function Gestion_Apadrinar(){
 
-    const [padrinos, setPadrinos] = useState(lista_apadrinamientos);
-    const [paginaActual, setPaginaActual] = useState(1);
-    const padrinosPorPagina = 9;
+  const [padrinos, setPadrinos] = useState(lista_apadrinamientos);
+  const [filtros, setFiltros] = useState({ nombre: "", correo: "" });
+  const [paginaActual, setPaginaActual] = useState(1);
+  const padrinosPorPagina = 9;
 
   const handleFilterChange = (newFilters) => {
-        setFiltros(newFilters)
-    }
+    setFiltros(newFilters);
+    setPaginaActual(1); // Reiniciar paginación al filtrar
+  };
+
+  // --- FILTRADO ---
+  const padrinosFiltrados = padrinos.filter((p) => {
+    const coincideNombre = p.nombre.toLowerCase().includes(filtros.nombre.toLowerCase());
+    const coincideCorreo = p.email.toLowerCase().includes(filtros.correo.toLowerCase());
+   
+
+    return coincideNombre && coincideCorreo;
+  });
+
+  // --- PAGINACIÓN ---
+  const indexUltimo = paginaActual * padrinosPorPagina;
+  const indexPrimero = indexUltimo - padrinosPorPagina;
+  const padrinosPaginados = padrinosFiltrados.slice(indexPrimero, indexUltimo);
+
+  const totalPaginas = Math.ceil(padrinosFiltrados.length / padrinosPorPagina);
+
+  const cambiarPagina = (numero) => {
+    setPaginaActual(numero);
+  };
+
+  // --- MODAL ELIMINAR ---
   const [padrinoAEliminar, setPadrinoAEliminar] = useState(null);
 
-const handleEliminar = (id) => {
-  const padrino = padrinos.find(a => a.id === id);
-  setPadrinoAEliminar(padrino); // Abre modal
-};
+  const handleEliminar = (id) => {
+    const padrino = padrinos.find(a => a.id === id);
+    setPadrinoAEliminar(padrino);
+  };
 
-const confirmarEliminar = () => {
-  setPadrinos(padrinos.filter(a => a.id !== padrinoAEliminar.id));
-  setPadrinoAEliminar(null);
-};
+  const confirmarEliminar = () => {
+    setPadrinos(padrinos.filter(a => a.id !== padrinoAEliminar.id));
+    setPadrinoAEliminar(null);
+  };
 
-const cancelarEliminar = () => {
-  setPadrinoAEliminar(null);
-};
-
-
-   
-    const indexUltimo = paginaActual * padrinosPorPagina;
-    const indexPrimero = indexUltimo - padrinosPorPagina;
-    const padrinosPaginados = padrinos.slice(indexPrimero, indexUltimo);
-
-    const totalPaginas = Math.ceil(padrinos.length / padrinosPorPagina);
-
-    const cambiarPagina = (numero) => {
-        setPaginaActual(numero);
-    };
-
-
+  const cancelarEliminar = () => {
+    setPadrinoAEliminar(null);
+  };
 
   return (
     <div className="gestion-padrino-container">
-        <div className="contenedor-principal">
-      <Table_Apadrinar
-        padrinos={padrinosPaginados}
-        onEliminar={handleEliminar}
-      />
-      
-   
-    
-    <div className="paginacion">
-  {Array.from({ length: totalPaginas }, (_, i) => (
-    <button
-      key={i}
-      className={`pagina-btn ${paginaActual === i + 1 ? "activa" : ""}`}
-      onClick={() => cambiarPagina(i + 1)}
-    >
-      {i + 1}
-    </button>
-  ))}
-  </div>
- {padrinoAEliminar && (
-  <div className="modal-eliminar">
-    <div className="modal-contenido">
+      <div className="contenedor-principal">
 
-      <div className="modal-icono">
-        ⚠️
+        {/* 🔶 FILTRO GLOBAL */}
+        <Filter_Colaborar onFilterChange={handleFilterChange} />
+
+        {/* TABLA */}
+        <Table_Apadrinar
+          padrinos={padrinosPaginados}
+          onEliminar={handleEliminar}
+        />
+
+        {/* PAGINACIÓN */}
+        <div className="paginacion">
+          {Array.from({ length: totalPaginas }, (_, i) => (
+            <button
+              key={i}
+              className={`pagina-btn ${paginaActual === i + 1 ? "activa" : ""}`}
+              onClick={() => cambiarPagina(i + 1)}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </div>
+
+        {/* MODAL */}
+        {padrinoAEliminar && (
+          <div className="modal-eliminar">
+            <div className="modal-contenido">
+
+              <div className="modal-icono">⚠️</div>
+
+              <h3>¿Eliminar a {padrinoAEliminar.nombre}?</h3>
+
+              <div className="modal-botones">
+                <button className="btn-eliminar-modal" onClick={confirmarEliminar}>
+                  🗑 Eliminar
+                </button>
+
+                <button className="btn-cancelar-modal" onClick={cancelarEliminar}>
+                  Cancelar
+                </button>
+              </div>
+
+            </div>
+          </div>
+        )}
+
       </div>
-
-      <h3>¿Eliminar a {padrinoAEliminar.nombre}?</h3>
-      <div className="modal-botones">
-        <button className="btn-eliminar-modal" onClick={confirmarEliminar}>
-          🗑 Eliminar
-        </button>
-
-        <button className="btn-cancelar-modal" onClick={cancelarEliminar}>
-          Cancelar
-        </button>
-      </div>
-
     </div>
-  </div>
-)}
-</div>
-</div>
-)
+  );
 }
 
 export default Gestion_Apadrinar;

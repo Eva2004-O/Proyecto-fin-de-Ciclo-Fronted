@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './List_Articulos.css';
+import Filter_Articulos from "./Filter_Articulos";
 import foto1 from '/src/assets/bloc-notas-perro-gato.jpg.webp';
 import foto2 from '/src/assets/botella-termica1.jpg.webp';
 import foto3 from '/src/assets/llavero-posterior.jpg.webp';
@@ -17,50 +18,75 @@ export const lista_articulos = [{id: "1", nombre: "Cuaderno Notas Perro y Gato",
                         {id: "6", nombre: "Taza Perro", precio: "8", stock: "3", imagen: foto6, descripcion: "Taza de cerámica con un diseño encantador de perro. Perfecta para tus desayunos o para decorar tu escritorio. Resistente, cómoda y con un toque tierno que alegra cualquier mañana."}
 ];
 
-function List_Articulos(){
-    const [articulos, setArticulos] = useState(lista_articulos);
-    const [paginaActual, setPaginaActual] = useState(1);
-    const articulosPorPagina = 9;
+function List_Articulos() {
 
-    const indexUltimo = paginaActual * articulosPorPagina;
-    const indexPrimero = indexUltimo - articulosPorPagina;
-    const articulosPaginados = articulos.slice(indexPrimero, indexUltimo);
+  const [filtros, setFiltros] = useState({ nombre: "", precio: "" });
+  const [paginaActual, setPaginaActual] = useState(1);
 
-    const totalPaginas = Math.ceil(articulos.length / articulosPorPagina);
+  const articulosPorPagina = 9;
 
-    const cambiarPagina = (numero) => {
-        setPaginaActual(numero);
-    };
-return (
-  <div className="lista-articulos">
+  // FILTRADO
+  const articulosFiltrados = lista_articulos.filter((a) => {
+    const coincideNombre = a.nombre
+      .toLowerCase()
+      .includes(filtros.nombre.toLowerCase());
 
-    <div className="contenedor-tarjetas-articulos">
-      {articulosPaginados.map((articulo) => (
-        <Articulo_Card
-          key={articulo.id}
-          id={articulo.id}
-          nombre={articulo.nombre}
-          precio={articulo.precio}
-          imagen={articulo.imagen}
-        />
-      ))}
+    let coincidePrecio = true;
+    const precioNum = Number(a.precio);
+
+    if (filtros.precio === "0-5") coincidePrecio = precioNum <= 5;
+    if (filtros.precio === "5-10") coincidePrecio = precioNum > 5 && precioNum <= 10;
+    if (filtros.precio === "10-20") coincidePrecio = precioNum > 10 && precioNum <= 20;
+    if (filtros.precio === "20+") coincidePrecio = precioNum > 20;
+
+    return coincideNombre && coincidePrecio;
+  });
+
+  // PAGINACIÓN
+  const indexUltimo = paginaActual * articulosPorPagina;
+  const indexPrimero = indexUltimo - articulosPorPagina;
+  const articulosPaginados = articulosFiltrados.slice(indexPrimero, indexUltimo);
+
+  const totalPaginas = Math.ceil(articulosFiltrados.length / articulosPorPagina);
+
+  const cambiarPagina = (numero) => {
+    setPaginaActual(numero);
+  };
+
+  return (
+    <div className="lista-articulos">
+<div className="contenedor-principal">
+      {/* FILTROS */}
+      <Filter_Articulos onFilterChange={setFiltros} />
+
+      {/* TARJETAS */}
+      <div className="contenedor-tarjetas-articulos">
+        {articulosPaginados.map((articulo) => (
+          <Articulo_Card
+            key={articulo.id}
+            id={articulo.id}
+            nombre={articulo.nombre}
+            precio={articulo.precio}
+            imagen={articulo.imagen}
+          />
+        ))}
+      </div>
+
+      {/* PAGINACIÓN */}
+      <div className="paginacion">
+        {Array.from({ length: totalPaginas }, (_, i) => (
+          <button
+            key={i}
+            className={`pagina-btn ${paginaActual === i + 1 ? "activa" : ""}`}
+            onClick={() => cambiarPagina(i + 1)}
+          >
+            {i + 1}
+          </button>
+        ))}
+      </div>
+</div>
     </div>
-
-    <div className="paginacion">
-      {Array.from({ length: totalPaginas }, (_, i) => (
-        <button
-          key={i}
-          className={`pagina-btn ${paginaActual === i + 1 ? "activa" : ""}`}
-          onClick={() => cambiarPagina(i + 1)}
-        >
-          {i + 1}
-        </button>
-      ))}
-    </div>
-
-  </div>
-);
-
+  );
 }
 
 export default List_Articulos;
