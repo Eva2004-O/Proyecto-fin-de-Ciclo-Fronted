@@ -11,9 +11,6 @@ return(
             <Link to={`/articulos/${id}`}>
           <button className="btn-info">Más información</button>
         </Link>
-        <Link to={`/animales/formulario/adopcion/${id}`}>
-        <button className="btn-comprar">Comprar</button>
-        </Link>
         </div>
     </div>
 ) 

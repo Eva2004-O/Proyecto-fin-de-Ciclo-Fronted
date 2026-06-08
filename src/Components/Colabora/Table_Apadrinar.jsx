@@ -34,7 +34,7 @@ function Table_Apadrinar({ padrinos, onEliminar }) {
               <td>{padrino.email}</td>
               <td>{padrino.telefono}</td>
               <td>{getAnimalName(padrino.animalId)}</td>
-              <td>{padrino.fecha}</td>
+              <td>{padrino.fechaRegistro}</td>
 
               <td className="acciones">
                 <Link to={`/administracion/apadrinar/${padrino.id}`}>

@@ -13,7 +13,7 @@ export const lista_voluntariado = [
     areas: ["paseos", "eventos"],
     experiencia: "He trabajado con animales rescatados.",
     comentarios: "Puedo ayudar más en verano.",
-    fecha: "2026-05-01"
+    fechaRegistro: "2026-05-01"
   },
   {
     id: "2",
@@ -25,7 +25,7 @@ export const lista_voluntariado = [
     areas: ["limpieza"],
     experiencia: "",
     comentarios: "",
-    fecha: "2026-04-28"
+    fechaRegistro: "2026-04-28"
   },
   {
     id: "3",
@@ -37,7 +37,7 @@ export const lista_voluntariado = [
     areas: ["redes", "eventos"],
     experiencia: "Gestión de redes sociales.",
     comentarios: "Puedo ayudar en campañas.",
-    fecha: "2026-04-20"
+    fechaRegistro: "2026-04-20"
   },
   {
     id: "4",
@@ -49,7 +49,7 @@ export const lista_voluntariado = [
     areas: ["paseos", "traslados"],
     experiencia: "",
     comentarios: "Tengo coche propio.",
-    fecha: "2026-04-15"
+    fechaRegistro: "2026-04-15"
   },
   {
     id: "5",
@@ -61,7 +61,7 @@ export const lista_voluntariado = [
     areas: ["limpieza"],
     experiencia: "",
     comentarios: "",
-    fecha: "2026-04-10"
+    fechaRegistro: "2026-04-10"
   }
 ];
 

@@ -27,7 +27,7 @@ function Table_Donaciones({donaciones, onEliminar}){
               <td>{donacion.email}</td>
               <td>{donacion.tipoDonacion} </td>
                 <td>{donacion.cantidad}{donacion.cantidadPersonalizada}€</td>
-                <td>{donacion.fecha}</td>
+                <td>{donacion.fechaRegistro}</td>
               <td className="acciones">
                 <Link to={`/administracion/donaciones/${donacion.id}`}>
                 <button className="btn-ver">

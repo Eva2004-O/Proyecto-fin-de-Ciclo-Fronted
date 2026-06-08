@@ -25,7 +25,6 @@ return (
 
       <div className="detalle-articulo-botones">
         <button className="btn-volver" onClick={() => navigate(-1)}>Volver</button>
-        <button className="btn-comprar">Comprar</button>
       </div>
 
     </div>

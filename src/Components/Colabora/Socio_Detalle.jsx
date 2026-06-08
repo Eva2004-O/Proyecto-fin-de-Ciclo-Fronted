@@ -32,10 +32,9 @@ function Socio_Detalle() {
             <p><strong>Nombre:</strong> {socio.nombre}</p>
             <p><strong>Email:</strong> {socio.email}</p>
             <p><strong>Teléfono:</strong> {socio.telefono}</p>
-            <p><strong>Cuota:</strong> {socio.cuota}€</p>
-            <p><strong>Periodicidad:</strong> {socio.periodicidad}</p>
+            <p><strong>Cantidad:</strong> {socio.cantidad}€</p>
             <p><strong>Método de pago:</strong> {socio.metodoPago}</p>
-            <p><strong>Fecha:</strong> {socio.fecha}</p>
+            <p><strong>Fecha:</strong> {socio.fechaRegistro}</p>
           </div>
 
           {socio.comentarios && (

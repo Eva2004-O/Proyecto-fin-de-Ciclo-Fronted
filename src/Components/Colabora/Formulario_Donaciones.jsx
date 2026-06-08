@@ -11,7 +11,6 @@ function Formulario_Donaciones() {
     telefono: "",
     tipoDonacion: "",
     cantidad: "",
-    cantidadPersonalizada: "",
     metodoPago: "",
     comentarios: "",
     aceptaCondiciones: false
@@ -67,18 +66,6 @@ function Formulario_Donaciones() {
         onChange={handleChange}
       />
 
-      <label>Tipo de donación:</label>
-      <select
-        name="tipoDonacion"
-        value={formData.tipoDonacion}
-        onChange={handleChange}
-        required
-      >
-        <option value="">Selecciona...</option>
-        <option value="puntual">Donación puntual</option>
-        <option value="mensual">Donación mensual</option>
-      </select>
-
       <label>Cantidad:</label>
       <select
         name="cantidad"
@@ -91,7 +78,6 @@ function Formulario_Donaciones() {
         <option value="10">10€</option>
         <option value="20">20€</option>
         <option value="30">30€</option>
-        <option value="otro">Otro importe</option>
       </select>
 
       {formData.cantidad === "otro" && (
@@ -99,7 +85,7 @@ function Formulario_Donaciones() {
           <label>Introduce tu importe personalizado:</label>
           <input
             type="number"
-            name="cantidadPersonalizada"
+            name="cantidad"
             min="1"
             placeholder="Ej: 12"
             onChange={handleChange}

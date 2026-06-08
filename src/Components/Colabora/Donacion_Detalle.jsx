@@ -31,10 +31,9 @@ function Donacion_Detalle() {
           <div className="detalle-datos">
             <p><strong>Nombre:</strong> {donacion.nombre}</p>
             <p><strong>Email:</strong> {donacion.email}</p>
-            <p><strong>Tipo de donación:</strong> {donacion.tipoDonacion}</p>
             <p><strong>Cantidad:</strong> {donacion.cantidad}€</p>
             <p><strong>Método de pago:</strong> {donacion.metodoPago}</p>
-            <p><strong>Fecha:</strong> {donacion.fecha}</p>
+            <p><strong>Fecha:</strong> {donacion.fechaRegistro}</p>
           </div>
 
           {donacion.comentarios && (

@@ -8,55 +8,50 @@ export const lista_socios = [
     nombre: "Laura Fernández",
     email: "laura.fernandez@example.com",
     telefono: "612345678",
-    cuota: 10,
-    periodicidad: "mensual",
+    cantidad: 10,
     metodoPago: "tarjeta",
     comentarios: "Quiero recibir noticias mensuales.",
-    fecha: "2026-05-01"
+    fechaRegistro: "2026-05-01"
   },
   {
     id: "2",
     nombre: "Marcos Varela",
     email: "marcos.varela@example.com",
     telefono: "698112233",
-    cuota: 5,
-    periodicidad: "mensual",
+    cantidad: 5,
     metodoPago: "paypal",
     comentarios: "",
-    fecha: "2026-04-28"
+    fechaRegistro: "2026-04-28"
   },
   {
     id: "3",
     nombre: "Ana Souto",
     email: "ana.souto@example.com",
     telefono: "622334455",
-    cuota: 20,
-    periodicidad: "trimestral",
+    cantidad: 20,
     metodoPago: "transferencia",
     comentarios: "Quiero apoyar casos especiales.",
-    fecha: "2026-04-20"
+    fechaRegistro: "2026-04-20"
   },
   {
     id: "4",
     nombre: "Diego Castro",
     email: "diego.castro@example.com",
     telefono: "677889900",
-    cuota: 15,
-    periodicidad: "mensual",
+    cantidad: 15,
     metodoPago: "tarjeta",
     comentarios: "",
-    fecha: "2026-04-15"
+    fechaRegistro: "2026-04-15"
   },
   {
     id: "5",
     nombre: "Sara Iglesias",
     email: "sara.iglesias@example.com",
     telefono: "699887766",
-    cuota: 8,
-    periodicidad: "mensual",
+    cantidad: 8,
     metodoPago: "paypal",
     comentarios: "Me gustaría recibir fotos de los animales.",
-    fecha: "2026-04-10"
+    fechaRegistro: "2026-04-10"
   }
 ];
 

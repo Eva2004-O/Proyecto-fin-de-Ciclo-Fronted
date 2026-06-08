@@ -11,8 +11,7 @@ function Table_Socios({ socios, onEliminar }) {
             <th>Nombre</th>
             <th>Email</th>
             <th>Teléfono</th>
-            <th>Cuota</th>
-            <th>Periodicidad</th>
+            <th>Cantidad</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -24,8 +23,7 @@ function Table_Socios({ socios, onEliminar }) {
               <td>{s.nombre}</td>
               <td>{s.email}</td>
               <td>{s.telefono}</td>
-              <td>{s.cuota}€</td>
-              <td>{s.periodicidad}</td>
+              <td>{s.cantidad}€</td>
 
               <td className="acciones">
                 <Link to={`/administracion/socios/${s.id}`}>

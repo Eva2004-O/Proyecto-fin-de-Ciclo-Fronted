@@ -40,8 +40,7 @@ function Apadrinar_Detalle() {
             <p><strong>Email:</strong> {padrino.email}</p>
             <p><strong>Teléfono:</strong> {padrino.telefono}</p>
             <p><strong>Animal:</strong> {getAnimalName(padrino.animalId)}</p>
-            <p><strong>Fecha:</strong> {padrino.fecha}</p>
-            <p><strong>Estado:</strong> {padrino.estado}</p>
+            <p><strong>Fecha Registro:</strong> {padrino.fechaRegistro}</p>
           </div>
 
           {padrino.comentarios && (

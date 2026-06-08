@@ -11,7 +11,7 @@ export const lista_donaciones = [
     tipoDonacion: "puntual",
     cantidad: 20,
     metodoPago: "tarjeta",
-    fecha: "2026-05-01",
+    fechaRegistro: "2026-05-01",
     comentarios: "Para ayudar con los gastos veterinarios."
   },
   {
@@ -21,7 +21,7 @@ export const lista_donaciones = [
     tipoDonacion: "mensual",
     cantidad: 10,
     metodoPago: "paypal",
-    fecha: "2026-04-28",
+    fechaRegistro: "2026-04-28",
     comentarios: "Me encanta vuestro trabajo."
   },
   {
@@ -31,7 +31,7 @@ export const lista_donaciones = [
     tipoDonacion: "puntual",
     cantidad: 50,
     metodoPago: "transferencia",
-    fecha: "2026-04-20",
+    fechaRegistro: "2026-04-20",
     comentarios: "Para el caso de Luna."
   },
   {
@@ -41,7 +41,7 @@ export const lista_donaciones = [
     tipoDonacion: "mensual",
     cantidad: 15,
     metodoPago: "tarjeta",
-    fecha: "2026-04-15",
+    fechaRegistro: "2026-04-15",
     comentarios: "Quiero apoyar a los gatos senior."
   },
   {
@@ -51,7 +51,7 @@ export const lista_donaciones = [
     tipoDonacion: "puntual",
     cantidad: 5,
     metodoPago: "paypal",
-    fecha: "2026-04-10",
+    fechaRegistro: "2026-04-10",
     comentarios: "Pequeña ayuda, con cariño."
   }
 ];

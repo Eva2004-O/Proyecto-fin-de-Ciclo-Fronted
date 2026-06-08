@@ -10,8 +10,8 @@ function Formulario_Socio() {
     email: "",
     telefono: "",
     ciudad: "",
-    cuota: "",
     metodoPago: "",
+    cantidad: "",
     comentarios: "",
     aceptaCondiciones: false
   });
@@ -75,10 +75,10 @@ function Formulario_Socio() {
         onChange={handleChange}
       />
 
-      <label>Cuota mensual:</label>
+      <label>Cantidad mensual:</label>
       <select
-        name="cuota"
-        value={formData.cuota}
+        name="cantidad"
+        value={formData.cantidad}
         onChange={handleChange}
         required
       >
@@ -90,12 +90,12 @@ function Formulario_Socio() {
         <option value="otro">Otro importe</option>
       </select>
 
-      {formData.cuota === "otro" && (
+      {formData.cantidad === "otro" && (
         <>
-          <label>Introduce tu cuota personalizada:</label>
+          <label>Introduce tu cantidad personalizada:</label>
           <input
             type="number"
-            name="cuotaPersonalizada"
+            name="cantidad"
             min="1"
             placeholder="Ej: 12"
             onChange={handleChange}

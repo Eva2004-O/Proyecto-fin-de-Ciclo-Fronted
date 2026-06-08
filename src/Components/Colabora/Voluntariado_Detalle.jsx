@@ -35,7 +35,7 @@ function Voluntariado_Detalle() {
             <p><strong>Ciudad:</strong> {voluntario.ciudad}</p>
             <p><strong>Disponibilidad:</strong> {voluntario.disponibilidad}</p>
             <p><strong>Áreas:</strong> {voluntario.areas.join(", ")}</p>
-            <p><strong>Fecha:</strong> {voluntario.fecha}</p>
+            <p><strong>Fecha Registro:</strong> {voluntario.fechaRegistro}</p>
           </div>
 
           {voluntario.experiencia && (

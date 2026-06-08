@@ -11,7 +11,7 @@ export const lista_apadrinamientos = [
     telefono: "612345678",
     animalId: "2",
     comentarios: "Quiero ayudar con sus gastos veterinarios.",
-    fecha: "2026-05-01",
+    fechaRegistro: "2026-05-01",
     estado: "activo"
   },
   {
@@ -21,7 +21,7 @@ export const lista_apadrinamientos = [
     telefono: "698112233",
     animalId: "7",
     comentarios: "Me gustaría recibir fotos mensuales.",
-    fecha: "2026-04-28",
+    fechaRegistro: "2026-04-28",
     estado: "activo"
   },
   {
@@ -31,7 +31,7 @@ export const lista_apadrinamientos = [
     telefono: "622334455",
     animalId: "3",
     comentarios: "Apoyo para su recuperación.",
-    fecha: "2026-04-20",
+    fechaRegistro: "2026-04-20",
     estado: "pendiente"
   },
   {
@@ -41,7 +41,7 @@ export const lista_apadrinamientos = [
     telefono: "677889900",
     animalId: "5",
     comentarios: "Me gustaría visitarlo cuando sea posible.",
-    fecha: "2026-04-15",
+    fechaRegistro: "2026-04-15",
     estado: "activo"
   },
   {
@@ -51,7 +51,7 @@ export const lista_apadrinamientos = [
     telefono: "699887766",
     animalId: "1",
     comentarios: "Apadrino con mucho cariño.",
-    fecha: "2026-04-10",
+    fechaRegistro: "2026-04-10",
     estado: "cancelado"
   }
 ];
